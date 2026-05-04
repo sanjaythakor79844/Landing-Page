@@ -179,6 +179,38 @@ img    { display: block; max-width: 100%; }
 .form-note   { font-size: 0.7rem; color: var(--text-dim); text-align: center; margin-top: 8px; }
 .form-note a { color: var(--accent); }
 
+/* ── AWARD STRIP ── */
+.award-strip {
+  background: var(--accent);
+  overflow: hidden;
+  padding: 13px 0;
+  white-space: nowrap;
+}
+.award-strip-inner {
+  display: inline-flex;
+  gap: 28px;
+  align-items: center;
+  animation: stripScroll 30s linear infinite;
+}
+.award-strip:hover .award-strip-inner {
+  animation-play-state: paused;
+}
+@keyframes stripScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.award-item {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: #fff;
+  white-space: nowrap;
+}
+.award-sep {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.6rem;
+}
+
 /* ── WHY ── */
 .why      { background: var(--bg); }
 .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 52px; }
