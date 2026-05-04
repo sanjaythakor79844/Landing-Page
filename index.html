@@ -682,6 +682,59 @@
   <button class="sticky-book" onclick="scrollToForm()">Book ✦</button>
 </div>
 
+<!-- ── LIVE CONTROLS ── -->
+<div class="lc-trigger" id="lcTrigger" onclick="toggleLiveControls()">
+  ✦ <span>LIVE CONTROLS</span>
+</div>
+
+<div class="lc-panel" id="lcPanel">
+  <div class="lc-header">
+    <span class="lc-title">✦ Live Controls</span>
+    <button class="lc-close" onclick="toggleLiveControls()">✕</button>
+  </div>
+
+  <!-- ACCENT COLOUR -->
+  <div class="lc-section">
+    <div class="lc-label">ACCENT COLOUR</div>
+    <div class="lc-chips">
+      <button class="lc-chip active" onclick="setAccent('maroon',this)"  data-color="#8b1a2e">Maroon</button>
+      <button class="lc-chip"        onclick="setAccent('rosegold',this)" data-color="#b8935a">Rose Gold</button>
+      <button class="lc-chip"        onclick="setAccent('blush',this)"    data-color="#c4748a">Blush</button>
+    </div>
+  </div>
+  <div class="lc-divider"></div>
+
+  <!-- BACKGROUND THEME -->
+  <div class="lc-section">
+    <div class="lc-label">BACKGROUND THEME</div>
+    <div class="lc-chips">
+      <button class="lc-chip active" onclick="setTheme('ivory',this)">Ivory</button>
+      <button class="lc-chip"        onclick="setTheme('dark',this)">Dark Luxe</button>
+    </div>
+  </div>
+  <div class="lc-divider"></div>
+
+  <!-- HERO HEADLINE -->
+  <div class="lc-section">
+    <div class="lc-label">HERO HEADLINE</div>
+    <div class="lc-headlines">
+      <button class="lc-headline active" onclick="setHeadline(0,this)">
+        <div class="lc-hl-text">Your most radiant day begins here</div>
+        <div class="lc-hl-sub">Romantic, bride-focused</div>
+      </button>
+      <button class="lc-headline" onclick="setHeadline(1,this)">
+        <div class="lc-hl-text">The bridal look you've always imagined</div>
+        <div class="lc-hl-sub">Aspiration &amp; vision</div>
+      </button>
+      <button class="lc-headline" onclick="setHeadline(2,this)">
+        <div class="lc-hl-text">10 years. 5000+ brides. One unforgettable look.</div>
+        <div class="lc-hl-sub">Trust &amp; experience</div>
+      </button>
+    </div>
+  </div>
+
+</div>
+
 <script src="js/main.js"></script>
 </body>
 </html>

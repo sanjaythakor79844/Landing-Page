@@ -275,3 +275,78 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
 // Legacy function — ab use nahi hoti
 function toggleCarouselSound() {}
+
+
+/* ─────────────────────────────────────────
+   10. LIVE CONTROLS PANEL
+───────────────────────────────────────── */
+
+/* Panel open/close */
+function toggleLiveControls() {
+  var panel   = document.getElementById('lcPanel');
+  var trigger = document.getElementById('lcTrigger');
+  var isOpen  = panel.classList.contains('open');
+  panel.classList.toggle('open');
+  trigger.style.right = isOpen ? '-68px' : '320px';
+}
+
+/* Accent colour change */
+var accentMap = {
+  maroon:  { accent: '#8b1a2e', accent2: '#a52238', glow: 'rgba(139,26,46,0.18)', light: 'rgba(139,26,46,0.08)' },
+  rosegold:{ accent: '#b8935a', accent2: '#c9a46b', glow: 'rgba(184,147,90,0.22)', light: 'rgba(184,147,90,0.1)' },
+  blush:   { accent: '#c4748a', accent2: '#d4859a', glow: 'rgba(196,116,138,0.22)', light: 'rgba(196,116,138,0.1)' }
+};
+
+function setAccent(name, btn) {
+  var c = accentMap[name];
+  if (!c) return;
+  var r = document.documentElement.style;
+  r.setProperty('--accent',       c.accent);
+  r.setProperty('--accent2',      c.accent2);
+  r.setProperty('--accent-glow',  c.glow);
+  r.setProperty('--accent-light', c.light);
+  document.querySelectorAll('.lc-chips .lc-chip').forEach(function(b) {
+    if (b.closest('.lc-section') === btn.closest('.lc-section'))
+      b.classList.remove('active');
+  });
+  btn.classList.add('active');
+}
+
+/* Background theme */
+var themeMap = {
+  ivory: { bg: '#f7f2ea', bg2: '#ede7d9', bg3: '#f0ebe2', text: '#1c0f0a', textMuted: 'rgba(28,15,10,0.58)', textDim: 'rgba(28,15,10,0.36)' },
+  dark:  { bg: '#1a1008', bg2: '#221508', bg3: '#1e1208', text: '#f0e8d8', textMuted: 'rgba(240,232,216,0.6)', textDim: 'rgba(240,232,216,0.35)' }
+};
+
+function setTheme(name, btn) {
+  var t = themeMap[name];
+  if (!t) return;
+  var r = document.documentElement.style;
+  r.setProperty('--bg',         t.bg);
+  r.setProperty('--bg2',        t.bg2);
+  r.setProperty('--bg3',        t.bg3);
+  r.setProperty('--text',       t.text);
+  r.setProperty('--text-muted', t.textMuted);
+  r.setProperty('--text-dim',   t.textDim);
+  document.querySelectorAll('.lc-chips .lc-chip').forEach(function(b) {
+    if (b.closest('.lc-section') === btn.closest('.lc-section'))
+      b.classList.remove('active');
+  });
+  btn.classList.add('active');
+}
+
+/* Hero headline swap */
+var headlines = [
+  { main: 'Your <em>most radiant</em><br>day begins here' },
+  { main: 'The bridal look you\'ve<br><em>always imagined</em>' },
+  { main: '10 years. 5000+ brides.<br><em>One unforgettable look.</em>' }
+];
+
+function setHeadline(idx, btn) {
+  var h1 = document.querySelector('.hero-headline');
+  if (h1) h1.innerHTML = headlines[idx].main;
+  document.querySelectorAll('.lc-headline').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  btn.classList.add('active');
+}
