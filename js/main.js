@@ -287,7 +287,7 @@ function toggleLiveControls() {
   var trigger = document.getElementById('lcTrigger');
   var isOpen  = panel.classList.contains('open');
   panel.classList.toggle('open');
-  trigger.style.right = isOpen ? '-68px' : '320px';
+  trigger.classList.toggle('shifted', !isOpen);
 }
 
 /* Accent colour change */
