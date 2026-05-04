@@ -224,29 +224,54 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
 
 /* ─────────────────────────────────────────
-   9. VIDEO CAROUSEL — Global Sound Toggle
+   9. VIDEO CAROUSEL — Click on video to unmute only that one
 ───────────────────────────────────────── */
-var carouselSoundOn = false;
+(function () {
+  // Sound button hide karo — ab individual video click se kaam hoga
+  var soundBtn = document.getElementById('vidSoundBtn');
+  if (soundBtn) soundBtn.style.display = 'none';
 
-function toggleCarouselSound() {
-  carouselSoundOn = !carouselSoundOn;
+  function initVideoClicks() {
+    document.querySelectorAll('.vid-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var clickedVideo = item.querySelector('video');
 
-  var btn    = document.getElementById('vidSoundBtn');
-  var videos = document.querySelectorAll('.vid-carousel-track video');
+        // Sab videos mute karo aur indicator hatao
+        document.querySelectorAll('.vid-item').forEach(function (i) {
+          var v = i.querySelector('video');
+          v.muted = true;
+          var ind = i.querySelector('.vid-sound-ind');
+          if (ind) ind.remove();
+        });
 
-  videos.forEach(function(v) {
-    v.muted = !carouselSoundOn;
-    // Sound on hone par pehli visible video play karo
-    if (carouselSoundOn) {
-      v.play().catch(function(){});
-    }
-  });
+        // Agar ye pehle se unmuted tha toh mute kar do (toggle)
+        if (!clickedVideo.muted) {
+          clickedVideo.muted = true;
+          return;
+        }
 
-  if (carouselSoundOn) {
-    btn.innerHTML = '🔊 <span>Sound On</span>';
-    btn.classList.add('unmuted');
-  } else {
-    btn.innerHTML = '🔇 <span>Tap for Sound</span>';
-    btn.classList.remove('unmuted');
+        // Is video ko unmute karo
+        clickedVideo.muted = false;
+        clickedVideo.play().catch(function () {
+          clickedVideo.muted = true;
+        });
+
+        // Sound indicator add karo
+        var ind = document.createElement('div');
+        ind.className = 'vid-sound-ind';
+        ind.textContent = '🔊';
+        item.appendChild(ind);
+      });
+    });
   }
-}
+
+  // DOM ready hone ke baad run karo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVideoClicks);
+  } else {
+    initVideoClicks();
+  }
+})();
+
+// Legacy function — ab use nahi hoti
+function toggleCarouselSound() {}

@@ -380,6 +380,46 @@ img    { display: block; max-width: 100%; }
   text-align: center;
 }
 
+/* Sound indicator — clicked video pe dikhega */
+.vid-sound-ind {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  z-index: 5;
+  pointer-events: none;
+  animation: popIn 0.2s ease;
+}
+@keyframes popIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* Tap hint on video */
+.vid-item::after {
+  content: '🔇 Tap for sound';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  padding: 3px 8px;
+  border-radius: 50px;
+  pointer-events: none;
+  z-index: 4;
+}
+
 /* Reels (hidden now, kept for fallback) */
 .reel-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 48px; }
 
