@@ -585,7 +585,7 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
   /* FORM */
   .form-card { padding: 18px 14px; border-radius: 12px; }
   .form-title { font-size: 1.1rem; }
-  .form-btn { font-size: 0.78rem; padding: 12px; }
+  .form-btn { font-size: 0.72rem; padding: 12px; letter-spacing: 0.08em; }
 
   /* SECTIONS */
   .section-pad { padding: 48px 16px; }
@@ -629,8 +629,9 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
 
   /* STICKY CTA — smaller on mobile */
   .sticky-cta { bottom: 16px; right: 12px; gap: 8px; }
-  .sticky-wa { padding: 9px 14px; font-size: 0.75rem; }
-  .sticky-book { padding: 9px 16px; font-size: 0.72rem; }
+  .sticky-wa { padding: 9px 12px; font-size: 0.75rem; }
+  .sticky-book { padding: 9px 14px; font-size: 0.72rem; }
+  .cta-text { display: none; } /* Mobile pe sirf icon dikhao */
 
   /* AWARD STRIP */
   .award-item { font-size: 0.6rem; letter-spacing: 0.08em; }
