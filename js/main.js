@@ -216,3 +216,32 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     }
   });
 });
+
+
+/* ─────────────────────────────────────────
+   9. VIDEO CAROUSEL — Global Sound Toggle
+───────────────────────────────────────── */
+var carouselSoundOn = false;
+
+function toggleCarouselSound() {
+  carouselSoundOn = !carouselSoundOn;
+
+  var btn    = document.getElementById('vidSoundBtn');
+  var videos = document.querySelectorAll('.vid-carousel-track video');
+
+  videos.forEach(function(v) {
+    v.muted = !carouselSoundOn;
+    // Sound on hone par pehli visible video play karo
+    if (carouselSoundOn) {
+      v.play().catch(function(){});
+    }
+  });
+
+  if (carouselSoundOn) {
+    btn.innerHTML = '🔊 <span>Sound On</span>';
+    btn.classList.add('unmuted');
+  } else {
+    btn.innerHTML = '🔇 <span>Tap for Sound</span>';
+    btn.classList.remove('unmuted');
+  }
+}

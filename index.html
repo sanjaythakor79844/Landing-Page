@@ -304,47 +304,51 @@
     <h2 class="section-title">Words from My <em>Brides</em></h2>
     <p class="section-desc">Real stories from women who trusted me with their most important day.</p>
 
-    <!-- ══ VIDEO CAROUSEL (auto-scroll left to right) ══
-         Apni MP4 videos assets/videos/ folder mein rakho:
-         vid1.mp4, vid2.mp4, vid3.mp4 ... jitni chahiye
-    -->
-    <div class="vid-carousel-wrap">
-      <div class="vid-carousel-track" id="vidTrack">
+    <!-- ══ VIDEO CAROUSEL (auto-scroll left to right) ══ -->
+    <div class="vid-carousel-outer">
+      <!-- Global Sound Button -->
+      <button class="vid-sound-btn" id="vidSoundBtn" onclick="toggleCarouselSound()">
+        🔇 <span>Tap for Sound</span>
+      </button>
 
-        <div class="vid-item">
-          <video src="assets/videos/IMG_6345.MP4" muted playsinline loop autoplay></video>
-          <div class="vid-label">Bridal Look ✦</div>
-        </div>
-        <div class="vid-item">
-          <video src="assets/videos/VID_20260504_105351_261.mp4" muted playsinline loop autoplay></video>
-          <div class="vid-label">Airbrush Bridal ✦</div>
-        </div>
-        <div class="vid-item">
-          <video src="assets/videos/IMG_6345.MP4" muted playsinline loop autoplay></video>
-          <div class="vid-label">Sangeet Glam ✦</div>
-        </div>
-        <div class="vid-item">
-          <video src="assets/videos/VID_20260504_105351_261.mp4" muted playsinline loop autoplay></video>
-          <div class="vid-label">Reception Night ✦</div>
-        </div>
-        <!-- Duplicate for seamless infinite loop -->
-        <div class="vid-item">
-          <video src="assets/videos/IMG_6345.MP4" muted playsinline loop autoplay></video>
-          <div class="vid-label">Bridal Look ✦</div>
-        </div>
-        <div class="vid-item">
-          <video src="assets/videos/VID_20260504_105351_261.mp4" muted playsinline loop autoplay></video>
-          <div class="vid-label">Airbrush Bridal ✦</div>
-        </div>
-        <div class="vid-item">
-          <video src="assets/videos/IMG_6345.MP4" muted playsinline loop autoplay></video>
-          <div class="vid-label">Sangeet Glam ✦</div>
-        </div>
-        <div class="vid-item">
-          <video src="assets/videos/VID_20260504_105351_261.mp4" muted playsinline loop autoplay></video>
-          <div class="vid-label">Reception Night ✦</div>
-        </div>
+      <div class="vid-carousel-wrap">
+        <div class="vid-carousel-track" id="vidTrack">
 
+          <div class="vid-item">
+            <video src="assets/videos/IMG_6345.MP4" muted playsinline loop autoplay></video>
+            <div class="vid-label">Bridal Look ✦</div>
+          </div>
+          <div class="vid-item">
+            <video src="assets/videos/VID_20260504_105351_261.mp4" muted playsinline loop autoplay></video>
+            <div class="vid-label">Airbrush Bridal ✦</div>
+          </div>
+          <div class="vid-item">
+            <video src="assets/videos/IMG_6345.MP4" muted playsinline loop autoplay></video>
+            <div class="vid-label">Sangeet Glam ✦</div>
+          </div>
+          <div class="vid-item">
+            <video src="assets/videos/VID_20260504_105351_261.mp4" muted playsinline loop autoplay></video>
+            <div class="vid-label">Reception Night ✦</div>
+          </div>
+          <!-- Duplicate for seamless infinite loop -->
+          <div class="vid-item">
+            <video src="assets/videos/IMG_6345.MP4" muted playsinline loop autoplay></video>
+            <div class="vid-label">Bridal Look ✦</div>
+          </div>
+          <div class="vid-item">
+            <video src="assets/videos/VID_20260504_105351_261.mp4" muted playsinline loop autoplay></video>
+            <div class="vid-label">Airbrush Bridal ✦</div>
+          </div>
+          <div class="vid-item">
+            <video src="assets/videos/IMG_6345.MP4" muted playsinline loop autoplay></video>
+            <div class="vid-label">Sangeet Glam ✦</div>
+          </div>
+          <div class="vid-item">
+            <video src="assets/videos/VID_20260504_105351_261.mp4" muted playsinline loop autoplay></video>
+            <div class="vid-label">Reception Night ✦</div>
+          </div>
+
+        </div>
       </div>
     </div>
 
