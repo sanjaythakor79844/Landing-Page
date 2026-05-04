@@ -14,6 +14,7 @@
   <div class="nav-logo">Kajol R <span>Paswan</span></div>
   <ul class="nav-links">
     <li><a href="#why">Why Us</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#testimonials">Brides</a></li>
     <li><a href="#packages">Packages</a></li>
@@ -39,6 +40,14 @@
       <div class="stat"><div class="stat-n">Intl.</div><div class="stat-l">Available</div></div>
       <div class="stat-div"></div>
       <div class="stat"><div class="stat-n">3×</div><div class="stat-l">Award Won</div></div>
+    </div>
+
+    <!-- Hero USPs -->
+    <div class="hero-usps fade-up d4">
+      <div class="hero-usp">✦ HD &amp; Soft Glam Specialist</div>
+      <div class="hero-usp">✦ Trial Always Included</div>
+      <div class="hero-usp">✦ On-Location Service</div>
+      <div class="hero-usp">✦ Destination Weddings</div>
     </div>
 
     <!-- Booking Form -->
@@ -252,6 +261,83 @@
     </div>
   </div>
 </section>
+
+<div class="gold-divider"></div>
+
+<!-- ── BRIDAL SERVICES ── -->
+<section class="section-pad bridal-services" id="services">
+  <div class="max-w">
+    <div class="section-tag">Your Bridal Experience</div>
+    <h2 class="section-title"><em>Thoughtfully Curated</em></h2>
+    <p class="section-desc">From your first consultation to your final touch-up, every detail is designed to make you feel confident, radiant, and completely yourself on your most important day.</p>
+    <div class="bs-grid">
+      <div class="bs-card reveal">
+        <div class="bs-num">01</div>
+        <div class="bs-icon">🪞</div>
+        <div class="bs-name">Discover Your Signature Look</div>
+        <div class="bs-sub">Pre-Bridal Consultation</div>
+        <p class="bs-desc">We begin with a personalised consultation to understand your vision, outfits, skin, and preferences — aligning every detail with your unique style and wedding aesthetic.</p>
+        <button class="bs-learn" onclick="scrollToForm()">Learn More ›</button>
+      </div>
+      <div class="bs-card reveal">
+        <div class="bs-num">02</div>
+        <div class="bs-icon">💄</div>
+        <div class="bs-name">Create Your Perfect Bridal Look</div>
+        <div class="bs-sub">Makeup &amp; Hair Styling</div>
+        <p class="bs-desc">Your bridal look is crafted to enhance your natural beauty — whether soft, radiant elegance or bold statement glam. Every detail tailored to your face, outfit, and occasion.</p>
+        <button class="bs-learn" onclick="scrollToForm()">Learn More ›</button>
+      </div>
+      <div class="bs-card reveal">
+        <div class="bs-num">03</div>
+        <div class="bs-icon">✨</div>
+        <div class="bs-name">Refine with Precision</div>
+        <div class="bs-sub">Makeup Trials</div>
+        <p class="bs-desc">Trial sessions ensure there are no surprises — only confidence. We perfect every element so your final look feels exactly right.</p>
+        <button class="bs-learn" onclick="scrollToForm()">Learn More ›</button>
+      </div>
+      <div class="bs-card reveal">
+        <div class="bs-num">04</div>
+        <div class="bs-icon">📸</div>
+        <div class="bs-name">Stay Flawless All Day</div>
+        <div class="bs-sub">HD, Long-Lasting Finish</div>
+        <p class="bs-desc">Flawless, camera-ready makeup that lasts through every moment — with on-ground touch-ups to keep you fresh all day.</p>
+        <button class="bs-learn" onclick="scrollToForm()">Learn More ›</button>
+      </div>
+      <div class="bs-card bs-featured reveal">
+        <div class="bs-num">05</div>
+        <div class="bs-icon">🚗</div>
+        <div class="bs-name">Relax, We Come to You</div>
+        <div class="bs-sub">On-Location Services</div>
+        <p class="bs-desc">Enjoy a seamless, stress-free experience as we travel to your venue and set up wherever you need us — your space, your pace.</p>
+        <button class="bs-learn" onclick="scrollToForm()">Learn More ›</button>
+      </div>
+      <div class="bs-card reveal">
+        <div class="bs-num">06</div>
+        <div class="bs-icon">✈️</div>
+        <div class="bs-name">Wherever Your Wedding Takes You</div>
+        <div class="bs-sub">Destination Wedding Services</div>
+        <p class="bs-desc">From Mumbai to international destinations — we bring luxury bridal artistry to you, wherever your story unfolds.</p>
+        <button class="bs-learn" onclick="scrollToForm()">Learn More ›</button>
+      </div>
+    </div>
+    <div class="center-btn-wrap">
+      <button class="outline-btn" onclick="scrollToForm()">Begin Your Journey ↗</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOOK DETAIL MODAL ── -->
+<div class="look-modal-overlay" id="lookModalOverlay" onclick="closeLookModal()">
+  <div class="look-modal" id="lookModal" onclick="event.stopPropagation()">
+    <button class="look-modal-close" onclick="closeLookModal()">✕</button>
+    <div class="look-modal-icon" id="modalIcon"></div>
+    <div class="look-modal-name" id="modalName"></div>
+    <div class="look-modal-tag" id="modalTag"></div>
+    <p class="look-modal-desc" id="modalDesc"></p>
+    <div class="look-modal-details" id="modalDetails"></div>
+    <button class="pkg-btn" style="margin-top:20px;width:100%;" onclick="scrollToForm();closeLookModal()">Book This Look →</button>
+  </div>
+</div>
 
 <div class="gold-divider"></div>
 
@@ -500,6 +586,7 @@
           <li>On-location service</li>
         </ul>
         <button class="pkg-btn" onclick="scrollToForm()">Enquire Now</button>
+        <button class="pkg-learn" onclick="showLookDetail('engagement')">Learn More ›</button>
       </div>
       <div class="pkg-card featured reveal">
         <div class="pkg-feat-badge">Most Booked</div>
@@ -514,6 +601,7 @@
           <li>Touch-up kit included</li>
         </ul>
         <button class="pkg-btn" onclick="scrollToForm()">Book Now</button>
+        <button class="pkg-learn" onclick="showLookDetail('bridal')">Learn More ›</button>
       </div>
       <div class="pkg-card reveal">
         <div class="pkg-icon">🌟</div>
@@ -526,6 +614,7 @@
           <li>On-location service</li>
         </ul>
         <button class="pkg-btn" onclick="scrollToForm()">Enquire Now</button>
+        <button class="pkg-learn" onclick="showLookDetail('reception')">Learn More ›</button>
       </div>
       <div class="pkg-card reveal">
         <div class="pkg-icon">🎶</div>
@@ -538,6 +627,7 @@
           <li>On-location service</li>
         </ul>
         <button class="pkg-btn" onclick="scrollToForm()">Enquire Now</button>
+        <button class="pkg-learn" onclick="showLookDetail('sangeet')">Learn More ›</button>
       </div>
     </div>
     <div class="center-btn-wrap">
@@ -555,48 +645,17 @@
     <h2 class="section-title">Questions, <em>Answered</em></h2>
     <p class="section-desc">Everything brides ask before booking — answered honestly.</p>
     <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">What is the difference between HD and Airbrush makeup?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">HD makeup uses light-diffusing pigments applied by hand for a flawless, richly pigmented finish ideal for 4K video and ultra-close photography. Airbrush uses a spray gun for micro-thin layers — nearly weightless, dewy, and buildable — perfect for outdoor events. Both offer all-day longevity. We decide together at your trial.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Is a pre-wedding trial always included?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Yes — every bridal package includes a dedicated 2–3 hour trial session, ideally 4–8 weeks before your wedding. We experiment with the exact look, discuss your outfit colours, test product longevity, and make adjustments. You leave with reference photos and complete confidence.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Do you charge for travel? What about destination weddings?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Travel within Mumbai is complimentary. Outstation bookings within Maharashtra attract a nominal travel charge. For destination weddings — Goa, Jaipur, Udaipur, abroad — travel, accommodation and local transport are added at actuals. I'll provide a clear all-inclusive quote with no hidden costs.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">How far in advance should I book?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Wedding season slots (October–February) fill 6–12 months in advance. I recommend booking at least 6 months before your date. A 30% advance payment secures your date. Off-season dates can also fill unexpectedly — reach out now to check availability.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">What products do you use? Are they safe for sensitive skin?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">I use MAC, Charlotte Tilbury, NARS, Kryolan, Airbase and Dermacol — all professional-grade and dermatologically tested. If you have known allergies, mention them at enquiry. I do a patch test during the trial and can substitute products as needed.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Can you do makeup for my entire bridal party?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Absolutely. I offer group packages for bridesmaids, mothers of the bride, and family members. For larger parties (4+ people), I can arrange a second qualified artist. Group rates are available — mention this when enquiring.</div>
-      </div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What makes Kajol's bridal makeup different?</span><span class="faq-icon">+</span></button><div class="faq-a">With experience across thousands of brides, Kajol is known for soft, skin-like finishes and timeless looks that feel personal and photograph beautifully.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What kind of products do you use?</span><span class="faq-icon">+</span></button><div class="faq-a">We use premium, professional brands like MAC, Charlotte Tilbury, NARS, and Kryolan — chosen for performance, safety, and finish.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Will my makeup last through long ceremonies?</span><span class="faq-icon">+</span></button><div class="faq-a">Yes, we use HD, long-wear techniques designed to stay flawless through hours of rituals, photography, and celebrations.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do you offer makeup for family and bridesmaids?</span><span class="faq-icon">+</span></button><div class="faq-a">Yes, we cater to family members and bridal parties. Advance planning helps us manage timing smoothly.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Is a trial session included?</span><span class="faq-icon">+</span></button><div class="faq-a">Yes, we recommend a trial 4–6 weeks before the wedding to finalise your look with complete clarity.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can each event look be customised?</span><span class="faq-icon">+</span></button><div class="faq-a">Absolutely. Every look is fully personalised, aligned with your outfit, skin, and the vibe of each function.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">I have sensitive skin — is it safe?</span><span class="faq-icon">+</span></button><div class="faq-a">Yes, we use skin-friendly, high-quality products and can arrange a patch test if needed.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How do I book my date?</span><span class="faq-icon">+</span></button><div class="faq-a">You can book via phone, website, or Instagram. Once your date is confirmed, we schedule your consultation and trial.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do you provide touch-ups during the event?</span><span class="faq-icon">+</span></button><div class="faq-a">Yes, we offer on-ground touch-ups to maintain a fresh, camera-ready look throughout key moments.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do you travel to the venue or destination weddings?</span><span class="faq-icon">+</span></button><div class="faq-a">Yes, we provide on-location services and travel for destination weddings. Logistics are planned in advance for a seamless experience.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How early should I book?</span><span class="faq-icon">+</span></button><div class="faq-a">We recommend booking 3–6 months in advance, as popular dates fill quickly.</div></div>
     </div>
   </div>
 </section>

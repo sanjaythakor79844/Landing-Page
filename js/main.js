@@ -350,3 +350,74 @@ function setHeadline(idx, btn) {
   });
   btn.classList.add('active');
 }
+
+
+/* ─────────────────────────────────────────
+   11. LOOK DETAIL MODAL
+───────────────────────────────────────── */
+var lookData = {
+  bridal: {
+    icon: '👰', name: 'Bridal Look', tag: 'Signature Full-Day Bridal',
+    desc: 'Step into forever — radiant, confident, and completely you. Flawless skin, soft yet defined eyes, and a radiant finish that not only looks stunning in person but also photographs beautifully.',
+    details: [
+      ['Skin Finish', 'Flawless, radiant, long-wearing'],
+      ['Eye Look', 'Soft & defined or bold & dramatic'],
+      ['Longevity', '10–14 hours'],
+      ['Trial', 'Included — 4–6 weeks before wedding'],
+      ['Hair Styling', 'Complementary bridal hairstyle']
+    ]
+  },
+  engagement: {
+    icon: '💍', name: 'Engagement / Ring Ceremony', tag: 'Graceful & Composed',
+    desc: 'Graceful, elegant, and perfectly composed for your first official moment. Polished and clearly bridal — without the full drama of the wedding day.',
+    details: [
+      ['Skin Finish', 'Semi-matte to satin'],
+      ['Eye Look', 'Soft & defined'],
+      ['Lip', 'Rose, mauve, berry or warm nude'],
+      ['Occasion', 'Intimate gathering'],
+      ['Hair', 'Graceful, portrait-ready']
+    ]
+  },
+  reception: {
+    icon: '🌟', name: 'Reception Look', tag: 'Grand Finale Glamour',
+    desc: 'Glamour, elegance, and a glow that fills the room. Luminous, dramatic, and worthy of every professional lens in the room.',
+    details: [
+      ['Skin Finish', 'Luminous, glowing'],
+      ['Eye Look', 'Sophisticated & dramatic'],
+      ['Lip', 'Bold red, deep berry or rich nude'],
+      ['Lashes', 'Fuller, dramatic'],
+      ['Contour', 'Enhanced cheekbone definition']
+    ]
+  },
+  sangeet: {
+    icon: '🎶', name: 'Sangeet & Mehendi Look', tag: 'Dance, Shine & Celebrate',
+    desc: 'Dance, shine, and own every moment of the night. Bold, expressive, and performance-grade — built to last through hours of movement and celebration.',
+    details: [
+      ['Skin Finish', 'Matte to satin, sweat-resistant'],
+      ['Eye Look', 'Bold & expressive'],
+      ['Lip', 'Coral, warm red or hot pink'],
+      ['Wear', '6–8 hours active wear'],
+      ['Hair', 'Dance-ready, secure style']
+    ]
+  }
+};
+
+function showLookDetail(key) {
+  var d = lookData[key];
+  if (!d) return;
+  document.getElementById('modalIcon').textContent = d.icon;
+  document.getElementById('modalName').textContent = d.name;
+  document.getElementById('modalTag').textContent  = d.tag;
+  document.getElementById('modalDesc').textContent = d.desc;
+  var det = d.details.map(function(r) {
+    return '<div><span>' + r[0] + '</span>' + r[1] + '</div>';
+  }).join('');
+  document.getElementById('modalDetails').innerHTML = det;
+  document.getElementById('lookModalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLookModal() {
+  document.getElementById('lookModalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
