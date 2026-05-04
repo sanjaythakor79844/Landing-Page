@@ -163,10 +163,15 @@ document.querySelectorAll('.ba-card').forEach(function (card) {
       if (pauseNotice) pauseNotice.classList.toggle('show', isPaused);
     });
 
-    /* Touch par pause */
+    /* Touch par pause — 4 sec baad auto resume */
     testiWrap.addEventListener('touchstart', function () {
       isPaused = true;
       if (pauseNotice) pauseNotice.classList.add('show');
+      clearTimeout(window._testiResumeTimer);
+      window._testiResumeTimer = setTimeout(function() {
+        isPaused = false;
+        if (pauseNotice) pauseNotice.classList.remove('show');
+      }, 4000);
     }, { passive: true });
   }
 

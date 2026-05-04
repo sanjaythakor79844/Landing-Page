@@ -458,7 +458,7 @@ img    { display: block; max-width: 100%; }
 .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--accent); color: #fff; border-color: var(--accent); }
 
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s; padding: 0 22px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.75; }
-.faq-item.open .faq-a { max-height: 200px; padding: 0 22px 20px; }
+.faq-item.open .faq-a { max-height: 400px; padding: 0 22px 20px; }
 
 /* ── FOOTER ── */
 footer      { background: var(--bg3); border-top: 1px solid var(--border); }
@@ -562,6 +562,7 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
   /* FOOTER */
   .footer-grid { grid-template-columns: 1fr; gap: 32px; padding: 48px 20px 32px; }
   .footer-bottom { padding: 16px 20px; flex-direction: column; gap: 6px; text-align: center; }
+  .footer-date-row { grid-template-columns: 1fr !important; }
 }
 
 /* ══════════════════════════════════════════
