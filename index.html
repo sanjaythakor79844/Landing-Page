@@ -942,5 +942,31 @@
 </div>
 
 <script src="js/main.js"></script>
+<script>
+// Direct inline test — bypasses any loading issues
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.pkg-learn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var match = btn.getAttribute('onclick');
+      if (match) {
+        var key = match.replace("openPkgDetail('", '').replace("')", '');
+        if (window.openPkgDetail) {
+          window.openPkgDetail(key);
+        } else {
+          // Fallback — direct DOM manipulation
+          var overlay = document.getElementById('pkgdOverlay');
+          if (overlay) {
+            overlay.style.transform = 'translateX(0)';
+            overlay.style.transition = 'transform 0.4s ease';
+            document.body.style.overflow = 'hidden';
+          }
+        }
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
