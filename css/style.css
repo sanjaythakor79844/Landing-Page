@@ -1171,13 +1171,17 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
    PACKAGE DETAIL OVERLAY
 ══════════════════════════════════════════ */
 .pkgd-overlay {
-  position: fixed; inset: 0; z-index: 950;
+  position: fixed;
+  inset: 0;
+  z-index: 950;
   background: #faf6f0;
   overflow-y: auto;
   transform: translateX(100%);
   transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
 }
-.pkgd-overlay.open { transform: translateX(0); }
+.pkgd-overlay.open {
+  transform: translateX(0) !important;
+}
 
 .pkgd-page {
   max-width: 680px;

@@ -23,6 +23,7 @@ function scrollToForm() {
     form.scrollIntoView({ behavior: 'smooth' });
   }
 }
+window.scrollToForm = scrollToForm;
 
 
 /* ─────────────────────────────────────────
@@ -31,17 +32,14 @@ function scrollToForm() {
 function toggleFaq(btn) {
   var item   = btn.closest('.faq-item');
   var isOpen = item.classList.contains('open');
-
-  // Pehle sab band karo
   document.querySelectorAll('.faq-item').forEach(function (i) {
     i.classList.remove('open');
   });
-
-  // Agar pehle band tha toh ab kholo
   if (!isOpen) {
     item.classList.add('open');
   }
 }
+window.toggleFaq = toggleFaq;
 
 
 /* ─────────────────────────────────────────
@@ -289,6 +287,7 @@ function toggleLiveControls() {
   panel.classList.toggle('open');
   trigger.classList.toggle('shifted', !isOpen);
 }
+window.toggleLiveControls = toggleLiveControls;
 
 /* Accent colour change */
 var accentMap = {
@@ -311,6 +310,7 @@ function setAccent(name, btn) {
   });
   btn.classList.add('active');
 }
+window.setAccent = setAccent;
 
 /* Background theme */
 var themeMap = {
@@ -334,6 +334,7 @@ function setTheme(name, btn) {
   });
   btn.classList.add('active');
 }
+window.setTheme = setTheme;
 
 /* Hero headline swap */
 var headlines = [
@@ -350,6 +351,7 @@ function setHeadline(idx, btn) {
   });
   btn.classList.add('active');
 }
+window.setHeadline = setHeadline;
 
 
 /* ─────────────────────────────────────────
@@ -416,11 +418,13 @@ function showLookDetail(key) {
   document.getElementById('lookModalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+window.showLookDetail = showLookDetail;
 
 function closeLookModal() {
   document.getElementById('lookModalOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
+window.closeLookModal = closeLookModal;
 
 
 /* ─────────────────────────────────────────
@@ -533,40 +537,41 @@ function openPkgDetail(key) {
   var d = pkgData[key];
   if (!d) return;
 
-  document.getElementById('pkgdEmoji').textContent    = d.emoji;
-  document.getElementById('pkgdCategory').textContent = d.category;
-  document.getElementById('pkgdTitle').textContent    = d.title;
-  document.getElementById('pkgdTagline').textContent  = d.tagline;
+  document.getElementById('pkgdEmoji').textContent     = d.emoji;
+  document.getElementById('pkgdCategory').textContent  = d.category;
+  document.getElementById('pkgdTitle').textContent     = d.title;
+  document.getElementById('pkgdTagline').textContent   = d.tagline;
   document.getElementById('pkgdLookQuote').textContent = d.lookQuote;
   document.getElementById('pkgdLookBody').textContent  = d.lookBody;
 
-  // AT A GLANCE
   var glanceHtml = d.glance.map(function(g) {
     return '<div class="pkgd-glance-item"><div class="pkgd-glance-key">' + g.k + '</div><div class="pkgd-glance-val">' + g.v + '</div></div>';
   }).join('');
   document.getElementById('pkgdGlance').innerHTML = glanceHtml;
 
-  // FAQs
-  var faqHtml = d.faqs.map(function(f, i) {
-    return '<div class="pkgd-faq-item"><button class="pkgd-faq-q" onclick="togglePkgFaq(this)">' + f.q + '<span>⌄</span></button><div class="pkgd-faq-a">' + f.a + '</div></div>';
+  var faqHtml = d.faqs.map(function(f) {
+    return '<div class="pkgd-faq-item"><button class="pkgd-faq-q" onclick="window.togglePkgFaq(this)">' + f.q + '<span>⌄</span></button><div class="pkgd-faq-a">' + f.a + '</div></div>';
   }).join('');
   document.getElementById('pkgdFaqList').innerHTML = faqHtml;
 
-  // Open overlay
   var overlay = document.getElementById('pkgdOverlay');
   overlay.classList.add('open');
   overlay.scrollTop = 0;
   document.body.style.overflow = 'hidden';
 }
+window.openPkgDetail = openPkgDetail;
 
 function closePkgDetail() {
-  document.getElementById('pkgdOverlay').classList.remove('open');
+  var overlay = document.getElementById('pkgdOverlay');
+  if (overlay) overlay.classList.remove('open');
   document.body.style.overflow = '';
 }
+window.closePkgDetail = closePkgDetail;
 
 function togglePkgFaq(btn) {
-  var item = btn.closest('.pkgd-faq-item');
+  var item   = btn.closest('.pkgd-faq-item');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.pkgd-faq-item').forEach(function(i) { i.classList.remove('open'); });
   if (!isOpen) item.classList.add('open');
 }
+window.togglePkgFaq = togglePkgFaq;
