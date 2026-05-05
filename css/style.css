@@ -143,21 +143,21 @@ img    { display: block; max-width: 100%; }
 .hero-badge-l   { font-size: 0.68rem; letter-spacing: 0.1em; color: var(--text-muted); text-transform: uppercase; }
 
 /* ── FORM ── */
-.form-card  { background: var(--surface2); border: 1px solid var(--border2); border-radius: var(--radius); padding: 28px; box-shadow: 0 8px 48px rgba(28,15,10,0.1); }
-.form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--accent); margin-bottom: 4px; }
-.form-sub   { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px; }
-.form-row   { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.form-card  { background: var(--surface2); border: 1px solid var(--border2); border-radius: var(--radius); padding: 22px 20px; box-shadow: 0 8px 48px rgba(28,15,10,0.1); }
+.form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--accent); margin-bottom: 3px; }
+.form-sub   { font-size: 0.74rem; color: var(--text-muted); margin-bottom: 16px; }
+.form-row   { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
 .form-full  { grid-column: 1 / -1; }
 
-.form-group       { display: flex; flex-direction: column; gap: 5px; }
-.form-group label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); }
+.form-group       { display: flex; flex-direction: column; gap: 4px; }
+.form-group label { font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   background: #fff; border: 1px solid var(--border2); border-radius: 8px;
-  padding: 10px 13px; color: var(--text);
-  font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 300;
+  padding: 8px 12px; color: var(--text);
+  font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 300;
   outline: none; transition: border-color 0.3s; -webkit-appearance: none; width: 100%;
 }
 .form-group input:focus,
@@ -165,7 +165,7 @@ img    { display: block; max-width: 100%; }
 .form-group textarea:focus  { border-color: var(--accent); }
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: var(--text-dim); }
-.form-group textarea { resize: none; min-height: 68px; }
+.form-group textarea { resize: none; min-height: 56px; }
 
 .form-btn {
   width: 100%; margin-top: 14px;
