@@ -635,66 +635,145 @@
     <h2 class="section-title">Choose Your <em>Package</em></h2>
     <p class="section-desc">Every package includes on-location service, luxury products, and my full undivided attention. Prices on enquiry.</p>
     <div class="pkg-grid">
+
+      <!-- Engagement -->
       <div class="pkg-card reveal">
         <div class="pkg-icon">💍</div>
         <div class="pkg-name">Engagement</div>
-        <div class="pkg-desc">Radiant and camera-ready for your ring ceremony.</div>
+        <div class="pkg-tagline">Elegant, intimate, effortlessly composed.</div>
         <ul class="pkg-includes">
-          <li>HD or Airbrush finish</li>
-          <li>Lashes included</li>
-          <li>Touch-up kit</li>
+          <li>Satin / semi-matte finish</li>
+          <li>Soft defined eyes (warm neutrals)</li>
+          <li>Rose, mauve, nude lip palette</li>
           <li>On-location service</li>
         </ul>
-        <button class="pkg-btn" onclick="scrollToForm()">Enquire Now</button>
-        <button class="pkg-learn" onclick="showLookDetail('engagement')">Learn More ›</button>
+        <button class="pkg-btn" onclick="scrollToForm()">ENQUIRE NOW</button>
+        <button class="pkg-learn" onclick="openPkgDetail('engagement')">Learn more about this package →</button>
       </div>
+
+      <!-- Bridal — featured -->
       <div class="pkg-card featured reveal">
         <div class="pkg-feat-badge">Most Booked</div>
         <div class="pkg-icon">👰</div>
         <div class="pkg-name">Bridal</div>
-        <div class="pkg-desc">My signature full-day bridal look — HD or Airbrush, long-lasting &amp; photo-perfect.</div>
+        <div class="pkg-tagline">Timeless. Radiant. Unforgettable.</div>
         <ul class="pkg-includes">
-          <li>HD or Airbrush bridal</li>
-          <li>Pre-wedding trial</li>
-          <li>Premium lashes</li>
-          <li>Draping assistance</li>
-          <li>Touch-up kit included</li>
+          <li>Flawless long-wear skin (10–14 hrs)</li>
+          <li>Custom eye look — soft to bold</li>
+          <li>Bridal hair styling</li>
+          <li>Trial session included</li>
+          <li>On-location service</li>
         </ul>
-        <button class="pkg-btn" onclick="scrollToForm()">Book Now</button>
-        <button class="pkg-learn" onclick="showLookDetail('bridal')">Learn More ›</button>
+        <button class="pkg-btn" onclick="scrollToForm()">BOOK NOW</button>
+        <button class="pkg-learn" onclick="openPkgDetail('bridal')">Learn more about this package →</button>
       </div>
+
+      <!-- Reception -->
       <div class="pkg-card reveal">
-        <div class="pkg-icon">🌟</div>
+        <div class="pkg-icon">⭐</div>
         <div class="pkg-name">Reception</div>
-        <div class="pkg-desc">Bold, editorial glamour for the most photographed party night.</div>
+        <div class="pkg-tagline">Glamour that owns the night.</div>
         <ul class="pkg-includes">
-          <li>Evening editorial finish</li>
-          <li>Cut-crease / smokey</li>
-          <li>Lashes &amp; setting spray</li>
+          <li>Luminous, highlighted skin</li>
+          <li>Smokey / bold evening eyes</li>
+          <li>Dramatic lashes</li>
           <li>On-location service</li>
         </ul>
-        <button class="pkg-btn" onclick="scrollToForm()">Enquire Now</button>
-        <button class="pkg-learn" onclick="showLookDetail('reception')">Learn More ›</button>
+        <button class="pkg-btn" onclick="scrollToForm()">ENQUIRE NOW</button>
+        <button class="pkg-learn" onclick="openPkgDetail('reception')">Learn more about this package →</button>
       </div>
+
+      <!-- Sangeet & Mehndi -->
       <div class="pkg-card reveal">
-        <div class="pkg-icon">🎶</div>
-        <div class="pkg-name">Sangeet &amp; Mehendi</div>
-        <div class="pkg-desc">Vibrant, joyful looks for your pre-wedding celebrations.</div>
+        <div class="pkg-icon">🎵</div>
+        <div class="pkg-name">Sangeet &amp; Mehndi</div>
+        <div class="pkg-tagline">Vibrant. Energetic. Dance-proof.</div>
         <ul class="pkg-includes">
-          <li>HD day/evening finish</li>
-          <li>Dewy or matte options</li>
-          <li>Lashes &amp; touch-up kit</li>
+          <li>Sweat-resistant (6–8 hrs wear)</li>
+          <li>Bold Sangeet eyes</li>
+          <li>Mehndi: soft dewy glow</li>
           <li>On-location service</li>
         </ul>
-        <button class="pkg-btn" onclick="scrollToForm()">Enquire Now</button>
-        <button class="pkg-learn" onclick="showLookDetail('sangeet')">Learn More ›</button>
+        <button class="pkg-btn" onclick="scrollToForm()">ENQUIRE NOW</button>
+        <button class="pkg-learn" onclick="openPkgDetail('sangeet')">Learn more about this package →</button>
       </div>
+
+      <!-- Haldi -->
+      <div class="pkg-card reveal">
+        <div class="pkg-icon">🌼</div>
+        <div class="pkg-name">Haldi</div>
+        <div class="pkg-tagline">Fresh, glowing, beautifully natural.</div>
+        <ul class="pkg-includes">
+          <li>Light, breathable skin finish</li>
+          <li>Water-resistant setting</li>
+          <li>Hypoallergenic formulas</li>
+          <li>On-location service</li>
+        </ul>
+        <button class="pkg-btn" onclick="scrollToForm()">ENQUIRE NOW</button>
+        <button class="pkg-learn" onclick="openPkgDetail('haldi')">Learn more about this package →</button>
+      </div>
+
     </div>
     <div class="center-btn-wrap">
       <button class="primary-btn" onclick="scrollToForm()">Get a Custom Quote →</button>
     </div>
   </div>
 </section>
+
+<!-- ══════════════════════════════════════
+     PACKAGE DETAIL OVERLAY
+══════════════════════════════════════ -->
+<div class="pkgd-overlay" id="pkgdOverlay">
+  <div class="pkgd-page" id="pkgdPage">
+
+    <!-- Back button -->
+    <button class="pkgd-back" onclick="closePkgDetail()">‹ Back to all packages</button>
+
+    <!-- Hero -->
+    <div class="pkgd-hero">
+      <div class="pkgd-emoji" id="pkgdEmoji"></div>
+      <div class="pkgd-category" id="pkgdCategory"></div>
+      <h1 class="pkgd-title" id="pkgdTitle"></h1>
+      <p class="pkgd-tagline" id="pkgdTagline"></p>
+      <div class="pkgd-ctas">
+        <button class="pkgd-cta-primary" onclick="scrollToForm();closePkgDetail()">ENQUIRE NOW</button>
+        <a class="pkgd-cta-secondary" href="tel:+919870459816">CALL US</a>
+      </div>
+    </div>
+
+    <!-- AT A GLANCE -->
+    <div class="pkgd-section">
+      <div class="pkgd-section-label">AT A GLANCE</div>
+      <div class="pkgd-glance-grid" id="pkgdGlance"></div>
+    </div>
+
+    <!-- THE LOOK -->
+    <div class="pkgd-section">
+      <div class="pkgd-section-label">THE LOOK</div>
+      <div class="pkgd-look-box">
+        <p class="pkgd-look-quote" id="pkgdLookQuote"></p>
+        <p class="pkgd-look-body" id="pkgdLookBody"></p>
+      </div>
+    </div>
+
+    <!-- FREQUENTLY ASKED -->
+    <div class="pkgd-section">
+      <div class="pkgd-section-label">FREQUENTLY ASKED</div>
+      <div class="pkgd-faq-list" id="pkgdFaqList"></div>
+    </div>
+
+    <!-- READY TO BOOK -->
+    <div class="pkgd-book-box">
+      <h3 class="pkgd-book-title">Ready to book this look?</h3>
+      <p class="pkgd-book-sub">Contact Kajol R Paswwan to enquire and schedule your trial session.<br>Bridal dates book quickly — reach out today to check availability.</p>
+      <div class="pkgd-ctas">
+        <button class="pkgd-cta-primary" onclick="scrollToForm();closePkgDetail()">ENQUIRE NOW</button>
+        <a class="pkgd-cta-secondary" href="tel:+919870459816">+91 98704 59816</a>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <div class="gold-divider"></div>
 

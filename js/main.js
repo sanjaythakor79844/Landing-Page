@@ -421,3 +421,152 @@ function closeLookModal() {
   document.getElementById('lookModalOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
+
+
+/* ─────────────────────────────────────────
+   12. PACKAGE DETAIL PAGES
+───────────────────────────────────────── */
+var pkgData = {
+  bridal: {
+    emoji: '👰', category: 'WEDDING DAY', title: 'Bridal',
+    tagline: 'Step into forever — radiant, confident, and completely you.',
+    glance: [
+      { k: 'SKIN FINISH', v: 'Flawless, radiant, long-wearing — tailored to your skin type' },
+      { k: 'EYE LOOK', v: 'Soft and defined or bold and dramatic — built around your style' },
+      { k: 'LIP COLOUR', v: 'Classic reds, warm nudes, to deep berries — colour-matched to your outfit' },
+      { k: 'HAIR STYLING', v: 'Romantic buns, braids, waves, or traditional updos' },
+      { k: 'LONGEVITY', v: '10–14 hours of continuous wear' },
+      { k: 'TRIAL SESSION', v: 'Included — 4 to 6 weeks before the wedding day' }
+    ],
+    lookQuote: 'Your wedding day is the most precious milestone of your life, and every detail of your bridal look matters.',
+    lookBody: 'Using high-quality products and advanced techniques, we ensure that your makeup stays fresh from the ceremony to the last dance. We craft a look that balances classic elements with contemporary flair, making you feel confident and radiant. Every bride who trusts us is unique, and so is every look we create.',
+    faqs: [
+      { q: 'Do you cater to destination weddings?', a: 'Yes, we are available for destination weddings. We can discuss travel and accommodation arrangements during booking to ensure everything goes smoothly.' },
+      { q: 'How do I book bridal makeup services?', a: 'You can book by contacting us through our website, phone, or social media. Once we confirm your date, we schedule a consultation to discuss your preferences.' },
+      { q: 'Do you provide makeup for the Sangeet or Mehndi too?', a: 'Absolutely! We offer makeup services for all wedding events. Each ceremony has its own vibe and we create looks that fit the celebration.' },
+      { q: 'Do you travel to the wedding venue?', a: 'Yes, we offer on-site services and will travel to your wedding venue. Travel costs may apply depending on location, which we discuss during booking.' }
+    ]
+  },
+  engagement: {
+    emoji: '💍', category: 'PRE-WEDDING', title: 'Engagement',
+    tagline: 'Graceful, elegant, and perfectly composed for your first official moment.',
+    glance: [
+      { k: 'SKIN FINISH', v: 'Semi-matte to satin — polished for indoor event lighting' },
+      { k: 'EYE LOOK', v: 'Soft and defined — warm neutrals with precise liner' },
+      { k: 'LIP COLOUR', v: 'Rose, mauve, berry, or warm nude in a satin finish' },
+      { k: 'BLUSH', v: 'Soft peach or dusty rose, blended high on the cheekbone' },
+      { k: 'HAIR STYLING', v: 'Graceful and complementary for portrait photography' },
+      { k: 'OCCASION', v: 'Daytime to early evening, intimate setting' }
+    ],
+    lookQuote: 'The Ring Ceremony is the beautiful beginning — the first formal milestone in your wedding journey.',
+    lookBody: 'We focus on achieving a look that feels effortlessly elegant — a makeup look that complements your special moment without overpowering it. This is a close-gathering look, which means every detail reads beautifully in person and in the intimate photography that defines Ring Ceremony memories.',
+    faqs: [
+      { q: 'Is the Ring Ceremony look very different from the wedding look?', a: 'Yes — the Ring Ceremony look is more understated and composed, designed for an intimate setting rather than the grandeur of the main wedding. It is clearly beautiful and bridal, but it does not steal from the impact of your wedding day look.' },
+      { q: 'Can I book only the Ring Ceremony makeup without a full package?', a: 'Yes, we offer individual event bookings as well as full wedding packages. Please contact us to discuss what works best for your wedding calendar.' },
+      { q: 'How far in advance should I book?', a: 'We recommend booking at least 3 to 6 months in advance, particularly for peak season dates between November and February. Early booking gives time to schedule a trial session.' },
+      { q: 'What if I have sensitive skin or allergies?', a: 'Please let us know at the time of enquiry. Kajol uses high-quality, hypoallergenic products and we can arrange a patch test before the event.' }
+    ]
+  },
+  reception: {
+    emoji: '⭐', category: 'EVENING CELEBRATION', title: 'Reception',
+    tagline: 'Glamour, elegance, and a glow that fills the room.',
+    glance: [
+      { k: 'SKIN FINISH', v: 'Luminous evening radiance with strategic highlight' },
+      { k: 'EYE LOOK', v: 'Sophisticated — smokey bronze, copper, or rich burgundy' },
+      { k: 'LIP COLOUR', v: 'Bold red, deep berry, rich nude, or ombré rose' },
+      { k: 'LASHES', v: 'Fuller, dramatic application for evening photography' },
+      { k: 'CONTOUR', v: 'Enhanced cheekbone definition for evening finish' },
+      { k: 'HAIR STYLING', v: 'Elegant and structured — suited to your jewellery' }
+    ],
+    lookQuote: 'The Reception is the grand finale — the evening where you get to dazzle.',
+    lookBody: 'We believe every bride should look dazzled at her reception. The look is calibrated for evening ambience, venue lighting, and the kind of photography that happens when everyone is in full celebratory mode. We work with you to balance your reception outfit with eye and lip choices that amplify your most beautiful features.',
+    faqs: [
+      { q: 'Can I have a completely different look for the reception?', a: 'Yes — this is something Kajol specialises in. If you are changing your outfit, she can create an entirely different look for the new ensemble, rehearsed during your trial sessions.' },
+      { q: 'How long does the reception makeup take?', a: 'A touch-up and transformation takes approximately 45 minutes to 1 hour. For a fresh application, expect 1.5 to 2 hours. We plan the timing to fit your reception schedule.' },
+      { q: 'What if I want a more Western or contemporary look?', a: 'Absolutely — whether you are wearing a gown, contemporary saree, or fusion silhouette, Kajol adapts the aesthetic completely to your outfit and personal style.' },
+      { q: 'Is the reception look included in the bridal package?', a: 'Our packages can be customised to include multiple ceremony looks. Please contact us to discuss a package that covers your full event calendar.' }
+    ]
+  },
+  sangeet: {
+    emoji: '🎵', category: 'PRE-WEDDING EVENTS', title: 'Sangeet & Mehndi',
+    tagline: 'Dance, shine, and own every moment of the night.',
+    glance: [
+      { k: 'SANGEET FINISH', v: 'Matte to satin — sweat-resistant for a full evening of dancing' },
+      { k: 'SANGEET EYE', v: 'Bold — bronze, champagne gold, deep teal, or smokey' },
+      { k: 'SANGEET LIP', v: 'Coral, tangerine, warm red, or hot pink' },
+      { k: 'MEHNDI FINISH', v: 'Dewy and radiant — photographically beautiful in daylight' },
+      { k: 'MEHNDI EYE', v: 'Terracotta, copper, rust, bronze in a soft blend' },
+      { k: 'LONGEVITY', v: 'Performance-grade — 6 to 8 hours of active wear' }
+    ],
+    lookQuote: 'The Sangeet is the most vibrant, most energetic event of your entire wedding calendar.',
+    lookBody: 'We love creating Sangeet and Mehndi looks because they give us the freedom to be a little more daring. This is where we can bring out a bolder eye, a brighter lip, and a palette that matches your outfit\'s festive energy. At the same time, we never lose sight of practicality — your makeup must hold up through hours of movement, heat, and emotion.',
+    faqs: [
+      { q: 'Will the makeup hold through dancing and perspiration?', a: 'Yes — Kajol uses professional performance-grade products with a layered setting technique specifically designed for movement and perspiration.' },
+      { q: 'Can I request a smokey eye for the Sangeet?', a: 'Absolutely! A bridal smokey eye is one of our most-requested looks. Kajol crafts it beautifully — from a delicate romantic version to a bold edgy statement.' },
+      { q: 'Can the Mehndi look work with a very colourful outfit?', a: 'Absolutely. Kajol excels at balancing vibrant palettes with makeup that complements rather than competes. We make this choice together during your trial.' },
+      { q: 'Do you offer makeup for bridesmaids and family at the Sangeet?', a: 'Yes, we offer makeup services for bridesmaids, family members, and other wedding party members. Please enquire at booking so we can plan the timing and team.' }
+    ]
+  },
+  haldi: {
+    emoji: '🌼', category: 'PRE-WEDDING RITUAL', title: 'Haldi',
+    tagline: 'Pure, golden, and glowing — the beauty of new beginnings.',
+    glance: [
+      { k: 'SKIN FINISH', v: 'Glowing, natural, light coverage that lets skin breathe' },
+      { k: 'EYE LOOK', v: 'Soft and warm — golden tones, kajal, and mascara' },
+      { k: 'LIP COLOUR', v: 'Peachy nudes, warm roses, or sheer gloss' },
+      { k: 'SETTING', v: 'Gentle, water-resistant — protects through the ceremony' },
+      { k: 'PRODUCTS', v: 'Skin-friendly, hypoallergenic for all skin types' },
+      { k: 'OCCASION', v: 'Daytime — outdoor or home garden ceremony' }
+    ],
+    lookQuote: 'Haldi ceremonies hold a special place in Kajol\'s heart. There is something so pure and joyful about this pre-wedding ritual.',
+    lookBody: 'The Haldi look is deliberately light, warm-toned, and natural. We use products that are gentle on the skin and designed to hold up through this joyful, messy, beautiful ceremony. Being part of a bride\'s journey during such intimate moments is where we truly connect.',
+    faqs: [
+      { q: 'Can I request a patch test before the Haldi makeup?', a: 'Yes, absolutely. If you have sensitive skin or allergies, please inform us at booking. We can arrange a patch test to ensure your skin stays comfortable and reaction-free.' },
+      { q: 'Will the turmeric from the ceremony affect my makeup?', a: 'We use a gentle but effective setting technique to protect the base makeup from turmeric contact. Your overall look remains intact and photographable throughout the ceremony.' },
+      { q: 'How long before the Haldi should I arrive for makeup?', a: 'We recommend beginning makeup around 1.5 to 2 hours before the ceremony starts, allowing time for photography and final adjustments.' },
+      { q: 'Is the Haldi look very different from the Mehndi look?', a: 'Yes — the Haldi look is the most natural and minimal of all ceremony looks. The Mehndi look has a little more colour and definition. We design all looks as a cohesive sequence.' }
+    ]
+  }
+};
+
+function openPkgDetail(key) {
+  var d = pkgData[key];
+  if (!d) return;
+
+  document.getElementById('pkgdEmoji').textContent    = d.emoji;
+  document.getElementById('pkgdCategory').textContent = d.category;
+  document.getElementById('pkgdTitle').textContent    = d.title;
+  document.getElementById('pkgdTagline').textContent  = d.tagline;
+  document.getElementById('pkgdLookQuote').textContent = d.lookQuote;
+  document.getElementById('pkgdLookBody').textContent  = d.lookBody;
+
+  // AT A GLANCE
+  var glanceHtml = d.glance.map(function(g) {
+    return '<div class="pkgd-glance-item"><div class="pkgd-glance-key">' + g.k + '</div><div class="pkgd-glance-val">' + g.v + '</div></div>';
+  }).join('');
+  document.getElementById('pkgdGlance').innerHTML = glanceHtml;
+
+  // FAQs
+  var faqHtml = d.faqs.map(function(f, i) {
+    return '<div class="pkgd-faq-item"><button class="pkgd-faq-q" onclick="togglePkgFaq(this)">' + f.q + '<span>⌄</span></button><div class="pkgd-faq-a">' + f.a + '</div></div>';
+  }).join('');
+  document.getElementById('pkgdFaqList').innerHTML = faqHtml;
+
+  // Open overlay
+  var overlay = document.getElementById('pkgdOverlay');
+  overlay.classList.add('open');
+  overlay.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+
+function closePkgDetail() {
+  document.getElementById('pkgdOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function togglePkgFaq(btn) {
+  var item = btn.closest('.pkgd-faq-item');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.pkgd-faq-item').forEach(function(i) { i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
