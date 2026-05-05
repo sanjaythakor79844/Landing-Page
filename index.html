@@ -943,30 +943,144 @@
 
 <script src="js/main.js"></script>
 <script>
-// Direct inline test — bypasses any loading issues
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.pkg-learn').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      var match = btn.getAttribute('onclick');
-      if (match) {
-        var key = match.replace("openPkgDetail('", '').replace("')", '');
-        if (window.openPkgDetail) {
-          window.openPkgDetail(key);
-        } else {
-          // Fallback — direct DOM manipulation
-          var overlay = document.getElementById('pkgdOverlay');
-          if (overlay) {
-            overlay.style.transform = 'translateX(0)';
-            overlay.style.transition = 'transform 0.4s ease';
-            document.body.style.overflow = 'hidden';
-          }
-        }
-      }
-    });
-  });
+/* ── ALL FUNCTIONS INLINE — guaranteed to work ── */
+
+/* 1. NAV */
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('mainNav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
 });
+
+/* 2. SCROLL TO FORM */
+window.scrollToForm = function() {
+  var f = document.getElementById('hero-form');
+  if (f) f.scrollIntoView({ behavior: 'smooth' });
+};
+
+/* 3. FAQ */
+window.toggleFaq = function(btn) {
+  var item = btn.closest('.faq-item');
+  var open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if (!open) item.classList.add('open');
+};
+
+/* 4. LIVE CONTROLS */
+window.toggleLiveControls = function() {
+  var p = document.getElementById('lcPanel');
+  var t = document.getElementById('lcTrigger');
+  if (!p) return;
+  var o = p.classList.contains('open');
+  p.classList.toggle('open');
+  if (t) t.classList.toggle('shifted', !o);
+};
+window.setAccent = function(name, btn) {
+  var m = { maroon:{a:'#8b1a2e',b:'#a52238',g:'rgba(139,26,46,0.18)',l:'rgba(139,26,46,0.08)'}, rosegold:{a:'#b8935a',b:'#c9a46b',g:'rgba(184,147,90,0.22)',l:'rgba(184,147,90,0.1)'}, blush:{a:'#c4748a',b:'#d4859a',g:'rgba(196,116,138,0.22)',l:'rgba(196,116,138,0.1)'} };
+  var c = m[name]; if (!c) return;
+  var r = document.documentElement.style;
+  r.setProperty('--accent', c.a); r.setProperty('--accent2', c.b);
+  r.setProperty('--accent-glow', c.g); r.setProperty('--accent-light', c.l);
+  if (btn) { document.querySelectorAll('.lc-chips .lc-chip').forEach(function(b){ if(b.closest('.lc-section')===btn.closest('.lc-section')) b.classList.remove('active'); }); btn.classList.add('active'); }
+};
+window.setTheme = function(name, btn) {
+  var m = { ivory:{bg:'#f7f2ea',bg2:'#ede7d9',bg3:'#f0ebe2',t:'#1c0f0a',tm:'rgba(28,15,10,0.58)',td:'rgba(28,15,10,0.36)'}, dark:{bg:'#1a1008',bg2:'#221508',bg3:'#1e1208',t:'#f0e8d8',tm:'rgba(240,232,216,0.6)',td:'rgba(240,232,216,0.35)'} };
+  var c = m[name]; if (!c) return;
+  var r = document.documentElement.style;
+  r.setProperty('--bg',c.bg); r.setProperty('--bg2',c.bg2); r.setProperty('--bg3',c.bg3);
+  r.setProperty('--text',c.t); r.setProperty('--text-muted',c.tm); r.setProperty('--text-dim',c.td);
+  if (btn) { document.querySelectorAll('.lc-chips .lc-chip').forEach(function(b){ if(b.closest('.lc-section')===btn.closest('.lc-section')) b.classList.remove('active'); }); btn.classList.add('active'); }
+};
+window.setHeadline = function(idx, btn) {
+  var h = ['Your <em>most radiant</em><br>day begins here', 'The bridal look you\'ve<br><em>always imagined</em>', '10 years. 5000+ brides.<br><em>One unforgettable look.</em>'];
+  var el = document.querySelector('.hero-headline');
+  if (el) el.innerHTML = h[idx];
+  document.querySelectorAll('.lc-headline').forEach(function(b){ b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+};
+
+/* 5. PACKAGE DETAIL */
+var PKG = {
+  bridal:     { emoji:'👰', cat:'WEDDING DAY',       title:'Bridal',           tag:'Step into forever — radiant, confident, and completely you.',
+    glance:[['SKIN FINISH','Flawless, radiant, long-wearing — tailored to your skin type'],['EYE LOOK','Soft and defined or bold and dramatic — built around your style'],['LIP COLOUR','Classic reds, warm nudes, to deep berries — colour-matched to your outfit'],['HAIR STYLING','Romantic buns, braids, waves, or traditional updos'],['LONGEVITY','10–14 hours of continuous wear'],['TRIAL SESSION','Included — 4 to 6 weeks before the wedding day']],
+    quote:'Your wedding day is the most precious milestone of your life, and every detail of your bridal look matters.',
+    body:'Using high-quality products and advanced techniques, we ensure that your makeup stays fresh from the ceremony to the last dance. We craft a look that balances classic elements with contemporary flair, making you feel confident and radiant.',
+    faqs:[['Do you cater to destination weddings?','Yes, we are available for destination weddings. We can discuss travel and accommodation arrangements during booking.'],['How do I book bridal makeup services?','You can book by contacting us through our website, phone, or social media. Once we confirm your date, we schedule a consultation.'],['Do you provide makeup for the Sangeet or Mehndi too?','Absolutely! We offer makeup services for all wedding events. Each ceremony has its own vibe and we create looks that fit the celebration.'],['Do you travel to the wedding venue?','Yes, we offer on-site services and will travel to your wedding venue. Travel costs may apply depending on location.']]
+  },
+  engagement: { emoji:'💍', cat:'PRE-WEDDING',        title:'Engagement',       tag:'Graceful, elegant, and perfectly composed for your first official moment.',
+    glance:[['SKIN FINISH','Semi-matte to satin — polished for indoor event lighting'],['EYE LOOK','Soft and defined — warm neutrals with precise liner'],['LIP COLOUR','Rose, mauve, berry, or warm nude in a satin finish'],['BLUSH','Soft peach or dusty rose, blended high on the cheekbone'],['HAIR STYLING','Graceful and complementary for portrait photography'],['OCCASION','Daytime to early evening, intimate setting']],
+    quote:'The Ring Ceremony is the beautiful beginning — the first formal milestone in your wedding journey.',
+    body:'We focus on achieving a look that feels effortlessly elegant — a makeup look that complements your special moment without overpowering it.',
+    faqs:[['Is the Ring Ceremony look very different from the wedding look?','Yes — it is more understated and composed, designed for an intimate setting. It does not steal from the impact of your wedding day look.'],['Can I book only the Ring Ceremony makeup without a full package?','Yes, we offer individual event bookings as well as full wedding packages.'],['How far in advance should I book?','We recommend booking at least 3 to 6 months in advance, particularly for peak season dates.'],['What if I have sensitive skin or allergies?','Kajol uses high-quality, hypoallergenic products and we can arrange a patch test before the event.']]
+  },
+  reception:  { emoji:'⭐', cat:'EVENING CELEBRATION', title:'Reception',        tag:'Glamour, elegance, and a glow that fills the room.',
+    glance:[['SKIN FINISH','Luminous evening radiance with strategic highlight'],['EYE LOOK','Sophisticated — smokey bronze, copper, or rich burgundy'],['LIP COLOUR','Bold red, deep berry, rich nude, or ombré rose'],['LASHES','Fuller, dramatic application for evening photography'],['CONTOUR','Enhanced cheekbone definition for evening finish'],['HAIR STYLING','Elegant and structured — suited to your jewellery']],
+    quote:'The Reception is the grand finale — the evening where you get to dazzle.',
+    body:'The look is calibrated for evening ambience, venue lighting, and the kind of photography that happens when everyone is in full celebratory mode.',
+    faqs:[['Can I have a completely different look for the reception?','Yes — Kajol can create an entirely different look for a new ensemble, rehearsed during your trial sessions.'],['How long does the reception makeup take?','A touch-up takes 45 min–1 hour. Fresh application: 1.5–2 hours.'],['What if I want a more Western or contemporary look?','Kajol adapts the aesthetic completely to your outfit and personal style.'],['Is the reception look included in the bridal package?','Packages can be customised to include multiple ceremony looks.']]
+  },
+  sangeet:    { emoji:'🎵', cat:'PRE-WEDDING EVENTS',  title:'Sangeet & Mehndi', tag:'Dance, shine, and own every moment of the night.',
+    glance:[['SANGEET FINISH','Matte to satin — sweat-resistant for a full evening of dancing'],['SANGEET EYE','Bold — bronze, champagne gold, deep teal, or smokey'],['SANGEET LIP','Coral, tangerine, warm red, or hot pink'],['MEHNDI FINISH','Dewy and radiant — photographically beautiful in daylight'],['MEHNDI EYE','Terracotta, copper, rust, bronze in a soft blend'],['LONGEVITY','Performance-grade — 6 to 8 hours of active wear']],
+    quote:'The Sangeet is the most vibrant, most energetic event of your entire wedding calendar.',
+    body:'We love creating Sangeet and Mehndi looks because they give us the freedom to be a little more daring — a bolder eye, a brighter lip, a palette that matches your outfit\'s festive energy.',
+    faqs:[['Will the makeup hold through dancing and perspiration?','Yes — performance-grade products with a layered setting technique designed for movement and perspiration.'],['Can I request a smokey eye for the Sangeet?','Absolutely! From a delicate romantic version to a bold edgy statement.'],['Can the Mehndi look work with a very colourful outfit?','Yes. We balance vibrant palettes with makeup that complements rather than competes.'],['Do you offer makeup for bridesmaids and family?','Yes, we offer makeup for bridesmaids, family members, and wedding party members.']]
+  },
+  haldi:      { emoji:'🌼', cat:'PRE-WEDDING RITUAL',  title:'Haldi',            tag:'Pure, golden, and glowing — the beauty of new beginnings.',
+    glance:[['SKIN FINISH','Glowing, natural, light coverage that lets skin breathe'],['EYE LOOK','Soft and warm — golden tones, kajal, and mascara'],['LIP COLOUR','Peachy nudes, warm roses, or sheer gloss'],['SETTING','Gentle, water-resistant — protects through the ceremony'],['PRODUCTS','Skin-friendly, hypoallergenic for all skin types'],['OCCASION','Daytime — outdoor or home garden ceremony']],
+    quote:'Haldi ceremonies hold a special place in Kajol\'s heart. There is something so pure and joyful about this pre-wedding ritual.',
+    body:'The Haldi look is deliberately light, warm-toned, and natural. We use products that are gentle on the skin and designed to hold up through this joyful, messy, beautiful ceremony.',
+    faqs:[['Can I request a patch test before the Haldi makeup?','Yes, absolutely. We can arrange a patch test to ensure your skin stays comfortable and reaction-free.'],['Will the turmeric affect my makeup?','We use a setting technique to protect the base makeup. Your look remains intact throughout the ceremony.'],['How long before the Haldi should I arrive?','We recommend beginning makeup 1.5 to 2 hours before the ceremony.'],['Is the Haldi look very different from the Mehndi look?','Yes — Haldi is the most natural and minimal. Mehndi has more colour and definition.']]
+  }
+};
+
+window.openPkgDetail = function(key) {
+  var d = PKG[key]; if (!d) return;
+  document.getElementById('pkgdEmoji').textContent     = d.emoji;
+  document.getElementById('pkgdCategory').textContent  = d.cat;
+  document.getElementById('pkgdTitle').textContent     = d.title;
+  document.getElementById('pkgdTagline').textContent   = d.tag;
+  document.getElementById('pkgdLookQuote').textContent = d.quote;
+  document.getElementById('pkgdLookBody').textContent  = d.body;
+  document.getElementById('pkgdGlance').innerHTML = d.glance.map(function(g){
+    return '<div class="pkgd-glance-item"><div class="pkgd-glance-key">'+g[0]+'</div><div class="pkgd-glance-val">'+g[1]+'</div></div>';
+  }).join('');
+  document.getElementById('pkgdFaqList').innerHTML = d.faqs.map(function(f){
+    return '<div class="pkgd-faq-item"><button class="pkgd-faq-q" onclick="window.togglePkgFaq(this)">'+f[0]+'<span>⌄</span></button><div class="pkgd-faq-a">'+f[1]+'</div></div>';
+  }).join('');
+  var ov = document.getElementById('pkgdOverlay');
+  ov.classList.add('open');
+  ov.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+};
+
+window.closePkgDetail = function() {
+  var ov = document.getElementById('pkgdOverlay');
+  if (ov) ov.classList.remove('open');
+  document.body.style.overflow = '';
+};
+
+window.togglePkgFaq = function(btn) {
+  var item = btn.closest('.pkgd-faq-item');
+  var open = item.classList.contains('open');
+  document.querySelectorAll('.pkgd-faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if (!open) item.classList.add('open');
+};
+
+/* 6. TESTIMONIAL SLIDER */
+window.goToSlide = window.goToSlide || function(n) {
+  var slider = document.getElementById('testiSlider');
+  var dots   = document.querySelectorAll('.slider-dot');
+  var total  = 3;
+  var cur    = ((n % total) + total) % total;
+  if (slider) slider.style.transform = 'translateX(-' + (cur * 100) + '%)';
+  dots.forEach(function(d,i){ d.classList.toggle('active', i===cur); });
+};
+
+/* 7. CLOSE LOOK MODAL */
+window.closeLookModal = function() {
+  var m = document.getElementById('lookModalOverlay');
+  if (m) m.classList.remove('open');
+  document.body.style.overflow = '';
+};
 </script>
 </body>
 </html>
