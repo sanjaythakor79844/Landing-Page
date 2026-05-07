@@ -575,3 +575,18 @@ function togglePkgFaq(btn) {
   if (!isOpen) item.classList.add('open');
 }
 window.togglePkgFaq = togglePkgFaq;
+
+/*  BS EXPAND (Thoughtfully Curated LEARN MORE) -- */
+window.toggleBsExpand = function(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var isOpen = el.classList.contains('open');
+  // Close all others
+  document.querySelectorAll('.bs-expand-content').forEach(function(e) { e.classList.remove('open'); });
+  document.querySelectorAll('.bs-learn').forEach(function(b) { b.classList.remove('expanded'); b.textContent = 'LEARN MORE '; });
+  if (!isOpen) {
+    el.classList.add('open');
+    btn.classList.add('expanded');
+    btn.textContent = 'SHOW LESS ';
+  }
+};
