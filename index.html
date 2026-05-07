@@ -988,6 +988,16 @@
 <script>
 /* ── ALL FUNCTIONS INLINE — guaranteed to work ── */
 
+/* BS EXPAND */
+window.toggleBsExpand = function(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var isOpen = el.classList.contains('open');
+  document.querySelectorAll('.bs-expand-content').forEach(function(e) { e.classList.remove('open'); });
+  document.querySelectorAll('.bs-learn').forEach(function(b) { b.classList.remove('expanded'); if(b.textContent.indexOf('SHOW LESS') > -1) b.textContent = 'LEARN MORE ›'; });
+  if (!isOpen) { el.classList.add('open'); btn.classList.add('expanded'); btn.textContent = 'SHOW LESS ‹'; }
+};
+
 /* 1. NAV */
 window.addEventListener('scroll', function() {
   var nav = document.getElementById('mainNav');
