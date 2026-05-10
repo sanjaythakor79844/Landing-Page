@@ -1,5 +1,1 @@
-assets/videos/
-*.mp4
-*.MP4
-*.mov
-*.MOV
+.vscode/

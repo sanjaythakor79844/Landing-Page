@@ -475,7 +475,8 @@ img    { display: block; max-width: 100%; }
 .pkg-card.featured { background: linear-gradient(145deg,rgba(139,26,46,0.07),rgba(139,26,46,0.02)); border-color: var(--accent); }
 
 .pkg-feat-badge { position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 16px; border-radius: 0 0 10px 10px; font-weight: 600; }
-.pkg-icon       { font-size: 1.8rem; margin: 10px auto 14px; }
+.pkg-icon       { width: 56px; height: 56px; border-radius: 50%; background: var(--accent-light); border: 1px solid rgba(139,26,46,0.2); display: flex; align-items: center; justify-content: center; margin: 10px auto 14px; color: var(--accent); }
+.pkg-icon svg   { width: 26px; height: 26px; stroke: var(--accent); }
 .pkg-name       { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 6px; color: var(--accent); }
 .pkg-desc       { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 18px; }
 .pkg-includes   { list-style: none; text-align: left; margin-bottom: 22px; display: flex; flex-direction: column; gap: 6px; }
@@ -1209,7 +1210,8 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
   background: #f5f0e8;
   border-bottom: 1px solid var(--border);
 }
-.pkgd-emoji { font-size: 3rem; margin-bottom: 12px; }
+.pkgd-emoji { width: 64px; height: 64px; border-radius: 50%; background: var(--accent-light); border: 1px solid rgba(139,26,46,0.2); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; color: var(--accent); }
+.pkgd-emoji svg { width: 30px; height: 30px; stroke: var(--accent); }
 .pkgd-category {
   font-family: 'Cinzel', serif; font-size: 0.65rem;
   letter-spacing: 0.25em; text-transform: uppercase;

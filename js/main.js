@@ -359,7 +359,7 @@ window.setHeadline = setHeadline;
 ───────────────────────────────────────── */
 var lookData = {
   bridal: {
-    icon: '👰', name: 'Bridal Look', tag: 'Signature Full-Day Bridal',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>', name: 'Bridal Look', tag: 'Signature Full-Day Bridal',
     desc: 'Step into forever — radiant, confident, and completely you. Flawless skin, soft yet defined eyes, and a radiant finish that not only looks stunning in person but also photographs beautifully.',
     details: [
       ['Skin Finish', 'Flawless, radiant, long-wearing'],
@@ -370,7 +370,7 @@ var lookData = {
     ]
   },
   engagement: {
-    icon: '💍', name: 'Engagement / Ring Ceremony', tag: 'Graceful & Composed',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>', name: 'Engagement / Ring Ceremony', tag: 'Graceful & Composed',
     desc: 'Graceful, elegant, and perfectly composed for your first official moment. Polished and clearly bridal — without the full drama of the wedding day.',
     details: [
       ['Skin Finish', 'Semi-matte to satin'],
@@ -381,7 +381,7 @@ var lookData = {
     ]
   },
   reception: {
-    icon: '🌟', name: 'Reception Look', tag: 'Grand Finale Glamour',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>', name: 'Reception Look', tag: 'Grand Finale Glamour',
     desc: 'Glamour, elegance, and a glow that fills the room. Luminous, dramatic, and worthy of every professional lens in the room.',
     details: [
       ['Skin Finish', 'Luminous, glowing'],
@@ -392,7 +392,7 @@ var lookData = {
     ]
   },
   sangeet: {
-    icon: '🎶', name: 'Sangeet & Mehendi Look', tag: 'Dance, Shine & Celebrate',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><path d="M9 18V5l12-2v13"/><path d="M6 15a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M18 13a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>', name: 'Sangeet & Mehendi Look', tag: 'Dance, Shine & Celebrate',
     desc: 'Dance, shine, and own every moment of the night. Bold, expressive, and performance-grade — built to last through hours of movement and celebration.',
     details: [
       ['Skin Finish', 'Matte to satin, sweat-resistant'],
@@ -407,7 +407,7 @@ var lookData = {
 function showLookDetail(key) {
   var d = lookData[key];
   if (!d) return;
-  document.getElementById('modalIcon').textContent = d.icon;
+  document.getElementById('modalIcon').innerHTML = d.icon;
   document.getElementById('modalName').textContent = d.name;
   document.getElementById('modalTag').textContent  = d.tag;
   document.getElementById('modalDesc').textContent = d.desc;
@@ -432,7 +432,7 @@ window.closeLookModal = closeLookModal;
 ───────────────────────────────────────── */
 var pkgData = {
   bridal: {
-    emoji: '👰', category: 'WEDDING DAY', title: 'Bridal',
+    emoji: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>', category: 'WEDDING DAY', title: 'Bridal',
     tagline: 'Step into forever — radiant, confident, and completely you.',
     glance: [
       { k: 'SKIN FINISH', v: 'Flawless, radiant, long-wearing — tailored to your skin type' },
@@ -452,7 +452,7 @@ var pkgData = {
     ]
   },
   engagement: {
-    emoji: '💍', category: 'PRE-WEDDING', title: 'Engagement',
+    emoji: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>', category: 'PRE-WEDDING', title: 'Engagement',
     tagline: 'Graceful, elegant, and perfectly composed for your first official moment.',
     glance: [
       { k: 'SKIN FINISH', v: 'Semi-matte to satin — polished for indoor event lighting' },
@@ -472,7 +472,7 @@ var pkgData = {
     ]
   },
   reception: {
-    emoji: '⭐', category: 'EVENING CELEBRATION', title: 'Reception',
+    emoji: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>', category: 'EVENING CELEBRATION', title: 'Reception',
     tagline: 'Glamour, elegance, and a glow that fills the room.',
     glance: [
       { k: 'SKIN FINISH', v: 'Luminous evening radiance with strategic highlight' },
@@ -492,7 +492,7 @@ var pkgData = {
     ]
   },
   sangeet: {
-    emoji: '🎵', category: 'PRE-WEDDING EVENTS', title: 'Sangeet & Mehndi',
+    emoji: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><path d="M9 18V5l12-2v13"/><path d="M6 15a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M18 13a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>', category: 'PRE-WEDDING EVENTS', title: 'Sangeet & Mehndi',
     tagline: 'Dance, shine, and own every moment of the night.',
     glance: [
       { k: 'SANGEET FINISH', v: 'Matte to satin — sweat-resistant for a full evening of dancing' },
@@ -512,7 +512,7 @@ var pkgData = {
     ]
   },
   haldi: {
-    emoji: '🌼', category: 'PRE-WEDDING RITUAL', title: 'Haldi',
+    emoji: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M5 5l1.5 1.5"/><path d="M17.5 17.5L19 19"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M5 19l1.5-1.5"/><path d="M17.5 6.5L19 5"/></svg>', category: 'PRE-WEDDING RITUAL', title: 'Haldi',
     tagline: 'Pure, golden, and glowing — the beauty of new beginnings.',
     glance: [
       { k: 'SKIN FINISH', v: 'Glowing, natural, light coverage that lets skin breathe' },
@@ -537,7 +537,7 @@ function openPkgDetail(key) {
   var d = pkgData[key];
   if (!d) return;
 
-  document.getElementById('pkgdEmoji').textContent     = d.emoji;
+  document.getElementById('pkgdEmoji').innerHTML       = d.emoji;
   document.getElementById('pkgdCategory').textContent  = d.category;
   document.getElementById('pkgdTitle').textContent     = d.title;
   document.getElementById('pkgdTagline').textContent   = d.tagline;
