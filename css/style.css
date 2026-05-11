@@ -468,8 +468,8 @@ img    { display: block; max-width: 100%; }
 .packages { background: var(--bg); }
 .pkg-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 52px; }
 
-.pkg-card         { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 22px; text-align: center; transition: all 0.35s; position: relative; overflow: hidden; cursor: pointer; }
-.pkg-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg,var(--accent-glow),transparent); opacity: 0; transition: opacity 0.4s; }
+.pkg-card         { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 22px; text-align: center; transition: all 0.35s; position: relative; overflow: hidden; }
+.pkg-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg,var(--accent-glow),transparent); opacity: 0; transition: opacity 0.4s; pointer-events: none; }
 .pkg-card:hover::before { opacity: 1; }
 .pkg-card:hover   { border-color: var(--accent2); transform: translateY(-6px); box-shadow: 0 16px 44px var(--accent-glow); }
 .pkg-card.featured { background: linear-gradient(145deg,rgba(139,26,46,0.07),rgba(139,26,46,0.02)); border-color: var(--accent); }
@@ -483,9 +483,17 @@ img    { display: block; max-width: 100%; }
 .pkg-includes li { font-size: 0.76rem; color: var(--text-muted); display: flex; align-items: flex-start; gap: 7px; }
 .pkg-includes li::before { content: '✦'; color: var(--accent); font-size: 0.58rem; margin-top: 3px; flex-shrink: 0; }
 
-.pkg-btn                  { width: 100%; padding: 10px; border-radius: 50px; border: 1.5px solid var(--accent); background: transparent; color: var(--accent); font-family: 'Jost', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+.pkg-btn                  { width: 100%; padding: 10px; border-radius: 50px; border: 1.5px solid var(--accent); background: transparent; color: var(--accent); font-family: 'Jost', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; position: relative; z-index: 2; }
 .pkg-btn:hover,
 .pkg-card.featured .pkg-btn { background: var(--accent); color: #fff; }
+
+.pkg-learn {
+  background: none; border: none; font-size: 0.72rem; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer;
+  margin-top: 14px; font-family: 'Jost', sans-serif; position: relative; z-index: 2;
+  transition: all 0.3s;
+}
+.pkg-learn:hover { color: var(--accent2); }
 
 /* ── FAQ ── */
 .faq-section { background: var(--bg2); }
