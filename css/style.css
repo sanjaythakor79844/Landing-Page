@@ -1364,31 +1364,13 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
 .bs-learn.expanded { color: var(--text-dim); }
 
 /* ══════════════════════════════════════════
-   PORTFOLIO OVERLAY (hover eye icon)
+   PORTFOLIO OVERLAY (no icon, no dark tint)
 ══════════════════════════════════════════ */
 .port-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(28,10,10,0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s;
-  z-index: 2;
-}
-.port-card:hover .port-overlay {
-  background: rgba(28,10,10,0.38);
+  display: none;
 }
 .port-overlay-icon {
-  font-size: 1.6rem;
-  opacity: 0;
-  transform: scale(0.7);
-  transition: opacity 0.3s, transform 0.3s;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
-}
-.port-card:hover .port-overlay-icon {
-  opacity: 1;
-  transform: scale(1);
+  display: none;
 }
 
 /* ══════════════════════════════════════════
