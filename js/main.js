@@ -1,11 +1,11 @@
-/* ═══════════════════════════════════════════
-   KAJOL R PASWAN — main.js
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   KAJOL R PASWAN â€” main.js
    Path: js/main.js
-═══════════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ─────────────────────────────────────────
-   1. NAV — scroll pe shadow add hoga
-───────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   1. NAV â€” scroll pe shadow add hoga
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 window.addEventListener('scroll', function () {
   var nav = document.getElementById('mainNav');
   if (nav) {
@@ -14,9 +14,9 @@ window.addEventListener('scroll', function () {
 });
 
 
-/* ─────────────────────────────────────────
-   2. SCROLL TO FORM — buttons ke liye
-───────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   2. SCROLL TO FORM â€” buttons ke liye
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function scrollToForm() {
   var form = document.getElementById('hero-form');
   if (form) {
@@ -26,9 +26,9 @@ function scrollToForm() {
 window.scrollToForm = scrollToForm;
 
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    3. FAQ ACCORDION
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function toggleFaq(btn) {
   var item   = btn.closest('.faq-item');
   var isOpen = item.classList.contains('open');
@@ -42,10 +42,10 @@ function toggleFaq(btn) {
 window.toggleFaq = toggleFaq;
 
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    4. BEFORE / AFTER SLIDER
    (drag ya touch se handle move hoga)
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 document.querySelectorAll('.ba-card').forEach(function (card) {
   var drag = false;
   var bef  = card.querySelector('.ba-before');
@@ -69,10 +69,10 @@ document.querySelectorAll('.ba-card').forEach(function (card) {
 });
 
 
-/* ─────────────────────────────────────────
-   5. PORTFOLIO — image load hone par
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   5. PORTFOLIO â€” image load hone par
       placeholder hide ho jayega
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 [1, 2, 3, 4].forEach(function (n) {
   var img = document.getElementById('pimg' + n);
   var ph  = document.getElementById('pph'  + n);
@@ -118,11 +118,11 @@ document.querySelectorAll('.ba-card').forEach(function (card) {
 })();
 
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    6. TESTIMONIAL AUTO-SLIDER
    - Har 3.8 sec mein slide badlega
    - Click / touch par pause hoga
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 (function () {
   var slider      = document.getElementById('testiSlider');
   var dots        = document.querySelectorAll('.slider-dot');
@@ -136,7 +136,7 @@ document.querySelectorAll('.ba-card').forEach(function (card) {
   var isPaused   = false;
   var autoTimer  = null;
 
-  /* Slide change function — goToSlide(n) HTML se bhi call ho sakta hai */
+  /* Slide change function â€” goToSlide(n) HTML se bhi call ho sakta hai */
   window.goToSlide = function (n) {
     current = (n + total) % total;
     slider.style.transform = 'translateX(-' + (current * 100) + '%)';
@@ -161,7 +161,7 @@ document.querySelectorAll('.ba-card').forEach(function (card) {
       if (pauseNotice) pauseNotice.classList.toggle('show', isPaused);
     });
 
-    /* Touch par pause — 4 sec baad auto resume */
+    /* Touch par pause â€” 4 sec baad auto resume */
     testiWrap.addEventListener('touchstart', function () {
       isPaused = true;
       if (pauseNotice) pauseNotice.classList.add('show');
@@ -179,11 +179,11 @@ document.querySelectorAll('.ba-card').forEach(function (card) {
 })();
 
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    7. SCROLL REVEAL
-   — .reveal elements viewport mein
+   â€” .reveal elements viewport mein
      aate hi .in class milti hai
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 (function () {
   var elements = document.querySelectorAll('.reveal');
 
@@ -207,9 +207,9 @@ document.querySelectorAll('.ba-card').forEach(function (card) {
 
 
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    8. SMOOTH ANCHOR LINKS
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 document.querySelectorAll('a[href^="#"]').forEach(function (link) {
   link.addEventListener('click', function (e) {
     var target = document.querySelector(this.getAttribute('href'));
@@ -221,11 +221,11 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 });
 
 
-/* ─────────────────────────────────────────
-   9. VIDEO CAROUSEL — Click on video to unmute only that one
-───────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   9. VIDEO CAROUSEL â€” Click on video to unmute only that one
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 (function () {
-  // Sound button hide karo — ab individual video click se kaam hoga
+  // Sound button hide karo â€” ab individual video click se kaam hoga
   var soundBtn = document.getElementById('vidSoundBtn');
   if (soundBtn) soundBtn.style.display = 'none';
 
@@ -257,7 +257,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
         // Sound indicator add karo
         var ind = document.createElement('div');
         ind.className = 'vid-sound-ind';
-        ind.textContent = '🔊';
+        ind.textContent = 'ðŸ”Š';
         item.appendChild(ind);
       });
     });
@@ -271,13 +271,13 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
   }
 })();
 
-// Legacy function — ab use nahi hoti
+// Legacy function â€” ab use nahi hoti
 function toggleCarouselSound() {}
 
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    10. LIVE CONTROLS PANEL
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 /* Panel open/close */
 function toggleLiveControls() {
@@ -354,24 +354,24 @@ function setHeadline(idx, btn) {
 window.setHeadline = setHeadline;
 
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    11. LOOK DETAIL MODAL
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 var lookData = {
   bridal: {
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>', name: 'Bridal Look', tag: 'Signature Full-Day Bridal',
-    desc: 'Step into forever — radiant, confident, and completely you. Flawless skin, soft yet defined eyes, and a radiant finish that not only looks stunning in person but also photographs beautifully.',
+    desc: 'Step into forever â€” radiant, confident, and completely you. Flawless skin, soft yet defined eyes, and a radiant finish that not only looks stunning in person but also photographs beautifully.',
     details: [
       ['Skin Finish', 'Flawless, radiant, long-wearing'],
       ['Eye Look', 'Soft & defined or bold & dramatic'],
-      ['Longevity', '10–14 hours'],
-      ['Trial', 'Included — 4–6 weeks before wedding'],
+      ['Longevity', '10â€“14 hours'],
+      ['Trial', 'Included â€” 4â€“6 weeks before wedding'],
       ['Hair Styling', 'Complementary bridal hairstyle']
     ]
   },
   engagement: {
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>', name: 'Engagement / Ring Ceremony', tag: 'Graceful & Composed',
-    desc: 'Graceful, elegant, and perfectly composed for your first official moment. Polished and clearly bridal — without the full drama of the wedding day.',
+    desc: 'Graceful, elegant, and perfectly composed for your first official moment. Polished and clearly bridal â€” without the full drama of the wedding day.',
     details: [
       ['Skin Finish', 'Semi-matte to satin'],
       ['Eye Look', 'Soft & defined'],
@@ -393,12 +393,12 @@ var lookData = {
   },
   sangeet: {
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><path d="M9 18V5l12-2v13"/><path d="M6 15a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M18 13a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>', name: 'Sangeet & Mehendi Look', tag: 'Dance, Shine & Celebrate',
-    desc: 'Dance, shine, and own every moment of the night. Bold, expressive, and performance-grade — built to last through hours of movement and celebration.',
+    desc: 'Dance, shine, and own every moment of the night. Bold, expressive, and performance-grade â€” built to last through hours of movement and celebration.',
     details: [
       ['Skin Finish', 'Matte to satin, sweat-resistant'],
       ['Eye Look', 'Bold & expressive'],
       ['Lip', 'Coral, warm red or hot pink'],
-      ['Wear', '6–8 hours active wear'],
+      ['Wear', '6â€“8 hours active wear'],
       ['Hair', 'Dance-ready, secure style']
     ]
   }
@@ -427,20 +427,20 @@ function closeLookModal() {
 window.closeLookModal = closeLookModal;
 
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    12. PACKAGE DETAIL PAGES
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 var pkgData = {
   bridal: {
     emoji: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>', category: 'WEDDING DAY', title: 'Bridal',
-    tagline: 'Step into forever — radiant, confident, and completely you.',
+    tagline: 'Step into forever â€” radiant, confident, and completely you.',
     glance: [
-      { k: 'SKIN FINISH', v: 'Flawless, radiant, long-wearing — tailored to your skin type' },
-      { k: 'EYE LOOK', v: 'Soft and defined or bold and dramatic — built around your style' },
-      { k: 'LIP COLOUR', v: 'Classic reds, warm nudes, to deep berries — colour-matched to your outfit' },
+      { k: 'SKIN FINISH', v: 'Flawless, radiant, long-wearing â€” tailored to your skin type' },
+      { k: 'EYE LOOK', v: 'Soft and defined or bold and dramatic â€” built around your style' },
+      { k: 'LIP COLOUR', v: 'Classic reds, warm nudes, to deep berries â€” colour-matched to your outfit' },
       { k: 'HAIR STYLING', v: 'Romantic buns, braids, waves, or traditional updos' },
-      { k: 'LONGEVITY', v: '10–14 hours of continuous wear' },
-      { k: 'TRIAL SESSION', v: 'Included — 4 to 6 weeks before the wedding day' }
+      { k: 'LONGEVITY', v: '10â€“14 hours of continuous wear' },
+      { k: 'TRIAL SESSION', v: 'Included â€” 4 to 6 weeks before the wedding day' }
     ],
     lookQuote: 'Your wedding day is the most precious milestone of your life, and every detail of your bridal look matters.',
     lookBody: 'Using high-quality products and advanced techniques, we ensure that your makeup stays fresh from the ceremony to the last dance. We craft a look that balances classic elements with contemporary flair, making you feel confident and radiant. Every bride who trusts us is unique, and so is every look we create.',
@@ -455,17 +455,17 @@ var pkgData = {
     emoji: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>', category: 'PRE-WEDDING', title: 'Engagement',
     tagline: 'Graceful, elegant, and perfectly composed for your first official moment.',
     glance: [
-      { k: 'SKIN FINISH', v: 'Semi-matte to satin — polished for indoor event lighting' },
-      { k: 'EYE LOOK', v: 'Soft and defined — warm neutrals with precise liner' },
+      { k: 'SKIN FINISH', v: 'Semi-matte to satin â€” polished for indoor event lighting' },
+      { k: 'EYE LOOK', v: 'Soft and defined â€” warm neutrals with precise liner' },
       { k: 'LIP COLOUR', v: 'Rose, mauve, berry, or warm nude in a satin finish' },
       { k: 'BLUSH', v: 'Soft peach or dusty rose, blended high on the cheekbone' },
       { k: 'HAIR STYLING', v: 'Graceful and complementary for portrait photography' },
       { k: 'OCCASION', v: 'Daytime to early evening, intimate setting' }
     ],
-    lookQuote: 'The Ring Ceremony is the beautiful beginning — the first formal milestone in your wedding journey.',
-    lookBody: 'We focus on achieving a look that feels effortlessly elegant — a makeup look that complements your special moment without overpowering it. This is a close-gathering look, which means every detail reads beautifully in person and in the intimate photography that defines Ring Ceremony memories.',
+    lookQuote: 'The Ring Ceremony is the beautiful beginning â€” the first formal milestone in your wedding journey.',
+    lookBody: 'We focus on achieving a look that feels effortlessly elegant â€” a makeup look that complements your special moment without overpowering it. This is a close-gathering look, which means every detail reads beautifully in person and in the intimate photography that defines Ring Ceremony memories.',
     faqs: [
-      { q: 'Is the Ring Ceremony look very different from the wedding look?', a: 'Yes — the Ring Ceremony look is more understated and composed, designed for an intimate setting rather than the grandeur of the main wedding. It is clearly beautiful and bridal, but it does not steal from the impact of your wedding day look.' },
+      { q: 'Is the Ring Ceremony look very different from the wedding look?', a: 'Yes â€” the Ring Ceremony look is more understated and composed, designed for an intimate setting rather than the grandeur of the main wedding. It is clearly beautiful and bridal, but it does not steal from the impact of your wedding day look.' },
       { q: 'Can I book only the Ring Ceremony makeup without a full package?', a: 'Yes, we offer individual event bookings as well as full wedding packages. Please contact us to discuss what works best for your wedding calendar.' },
       { q: 'How far in advance should I book?', a: 'We recommend booking at least 3 to 6 months in advance, particularly for peak season dates between November and February. Early booking gives time to schedule a trial session.' },
       { q: 'What if I have sensitive skin or allergies?', a: 'Please let us know at the time of enquiry. Kajol uses high-quality, hypoallergenic products and we can arrange a patch test before the event.' }
@@ -476,18 +476,18 @@ var pkgData = {
     tagline: 'Glamour, elegance, and a glow that fills the room.',
     glance: [
       { k: 'SKIN FINISH', v: 'Luminous evening radiance with strategic highlight' },
-      { k: 'EYE LOOK', v: 'Sophisticated — smokey bronze, copper, or rich burgundy' },
-      { k: 'LIP COLOUR', v: 'Bold red, deep berry, rich nude, or ombré rose' },
+      { k: 'EYE LOOK', v: 'Sophisticated â€” smokey bronze, copper, or rich burgundy' },
+      { k: 'LIP COLOUR', v: 'Bold red, deep berry, rich nude, or ombrÃ© rose' },
       { k: 'LASHES', v: 'Fuller, dramatic application for evening photography' },
       { k: 'CONTOUR', v: 'Enhanced cheekbone definition for evening finish' },
-      { k: 'HAIR STYLING', v: 'Elegant and structured — suited to your jewellery' }
+      { k: 'HAIR STYLING', v: 'Elegant and structured â€” suited to your jewellery' }
     ],
-    lookQuote: 'The Reception is the grand finale — the evening where you get to dazzle.',
+    lookQuote: 'The Reception is the grand finale â€” the evening where you get to dazzle.',
     lookBody: 'We believe every bride should look dazzled at her reception. The look is calibrated for evening ambience, venue lighting, and the kind of photography that happens when everyone is in full celebratory mode. We work with you to balance your reception outfit with eye and lip choices that amplify your most beautiful features.',
     faqs: [
-      { q: 'Can I have a completely different look for the reception?', a: 'Yes — this is something Kajol specialises in. If you are changing your outfit, she can create an entirely different look for the new ensemble, rehearsed during your trial sessions.' },
+      { q: 'Can I have a completely different look for the reception?', a: 'Yes â€” this is something Kajol specialises in. If you are changing your outfit, she can create an entirely different look for the new ensemble, rehearsed during your trial sessions.' },
       { q: 'How long does the reception makeup take?', a: 'A touch-up and transformation takes approximately 45 minutes to 1 hour. For a fresh application, expect 1.5 to 2 hours. We plan the timing to fit your reception schedule.' },
-      { q: 'What if I want a more Western or contemporary look?', a: 'Absolutely — whether you are wearing a gown, contemporary saree, or fusion silhouette, Kajol adapts the aesthetic completely to your outfit and personal style.' },
+      { q: 'What if I want a more Western or contemporary look?', a: 'Absolutely â€” whether you are wearing a gown, contemporary saree, or fusion silhouette, Kajol adapts the aesthetic completely to your outfit and personal style.' },
       { q: 'Is the reception look included in the bridal package?', a: 'Our packages can be customised to include multiple ceremony looks. Please contact us to discuss a package that covers your full event calendar.' }
     ]
   },
@@ -495,32 +495,32 @@ var pkgData = {
     emoji: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><path d="M9 18V5l12-2v13"/><path d="M6 15a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M18 13a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>', category: 'PRE-WEDDING EVENTS', title: 'Sangeet & Mehndi',
     tagline: 'Dance, shine, and own every moment of the night.',
     glance: [
-      { k: 'SANGEET FINISH', v: 'Matte to satin — sweat-resistant for a full evening of dancing' },
-      { k: 'SANGEET EYE', v: 'Bold — bronze, champagne gold, deep teal, or smokey' },
+      { k: 'SANGEET FINISH', v: 'Matte to satin â€” sweat-resistant for a full evening of dancing' },
+      { k: 'SANGEET EYE', v: 'Bold â€” bronze, champagne gold, deep teal, or smokey' },
       { k: 'SANGEET LIP', v: 'Coral, tangerine, warm red, or hot pink' },
-      { k: 'MEHNDI FINISH', v: 'Dewy and radiant — photographically beautiful in daylight' },
+      { k: 'MEHNDI FINISH', v: 'Dewy and radiant â€” photographically beautiful in daylight' },
       { k: 'MEHNDI EYE', v: 'Terracotta, copper, rust, bronze in a soft blend' },
-      { k: 'LONGEVITY', v: 'Performance-grade — 6 to 8 hours of active wear' }
+      { k: 'LONGEVITY', v: 'Performance-grade â€” 6 to 8 hours of active wear' }
     ],
     lookQuote: 'The Sangeet is the most vibrant, most energetic event of your entire wedding calendar.',
-    lookBody: 'We love creating Sangeet and Mehndi looks because they give us the freedom to be a little more daring. This is where we can bring out a bolder eye, a brighter lip, and a palette that matches your outfit\'s festive energy. At the same time, we never lose sight of practicality — your makeup must hold up through hours of movement, heat, and emotion.',
+    lookBody: 'We love creating Sangeet and Mehndi looks because they give us the freedom to be a little more daring. This is where we can bring out a bolder eye, a brighter lip, and a palette that matches your outfit\'s festive energy. At the same time, we never lose sight of practicality â€” your makeup must hold up through hours of movement, heat, and emotion.',
     faqs: [
-      { q: 'Will the makeup hold through dancing and perspiration?', a: 'Yes — Kajol uses professional performance-grade products with a layered setting technique specifically designed for movement and perspiration.' },
-      { q: 'Can I request a smokey eye for the Sangeet?', a: 'Absolutely! A bridal smokey eye is one of our most-requested looks. Kajol crafts it beautifully — from a delicate romantic version to a bold edgy statement.' },
+      { q: 'Will the makeup hold through dancing and perspiration?', a: 'Yes â€” Kajol uses professional performance-grade products with a layered setting technique specifically designed for movement and perspiration.' },
+      { q: 'Can I request a smokey eye for the Sangeet?', a: 'Absolutely! A bridal smokey eye is one of our most-requested looks. Kajol crafts it beautifully â€” from a delicate romantic version to a bold edgy statement.' },
       { q: 'Can the Mehndi look work with a very colourful outfit?', a: 'Absolutely. Kajol excels at balancing vibrant palettes with makeup that complements rather than competes. We make this choice together during your trial.' },
       { q: 'Do you offer makeup for bridesmaids and family at the Sangeet?', a: 'Yes, we offer makeup services for bridesmaids, family members, and other wedding party members. Please enquire at booking so we can plan the timing and team.' }
     ]
   },
   haldi: {
     emoji: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M5 5l1.5 1.5"/><path d="M17.5 17.5L19 19"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M5 19l1.5-1.5"/><path d="M17.5 6.5L19 5"/></svg>', category: 'PRE-WEDDING RITUAL', title: 'Haldi',
-    tagline: 'Pure, golden, and glowing — the beauty of new beginnings.',
+    tagline: 'Pure, golden, and glowing â€” the beauty of new beginnings.',
     glance: [
       { k: 'SKIN FINISH', v: 'Glowing, natural, light coverage that lets skin breathe' },
-      { k: 'EYE LOOK', v: 'Soft and warm — golden tones, kajal, and mascara' },
+      { k: 'EYE LOOK', v: 'Soft and warm â€” golden tones, kajal, and mascara' },
       { k: 'LIP COLOUR', v: 'Peachy nudes, warm roses, or sheer gloss' },
-      { k: 'SETTING', v: 'Gentle, water-resistant — protects through the ceremony' },
+      { k: 'SETTING', v: 'Gentle, water-resistant â€” protects through the ceremony' },
       { k: 'PRODUCTS', v: 'Skin-friendly, hypoallergenic for all skin types' },
-      { k: 'OCCASION', v: 'Daytime — outdoor or home garden ceremony' }
+      { k: 'OCCASION', v: 'Daytime â€” outdoor or home garden ceremony' }
     ],
     lookQuote: 'Haldi ceremonies hold a special place in Kajol\'s heart. There is something so pure and joyful about this pre-wedding ritual.',
     lookBody: 'The Haldi look is deliberately light, warm-toned, and natural. We use products that are gentle on the skin and designed to hold up through this joyful, messy, beautiful ceremony. Being part of a bride\'s journey during such intimate moments is where we truly connect.',
@@ -528,7 +528,7 @@ var pkgData = {
       { q: 'Can I request a patch test before the Haldi makeup?', a: 'Yes, absolutely. If you have sensitive skin or allergies, please inform us at booking. We can arrange a patch test to ensure your skin stays comfortable and reaction-free.' },
       { q: 'Will the turmeric from the ceremony affect my makeup?', a: 'We use a gentle but effective setting technique to protect the base makeup from turmeric contact. Your overall look remains intact and photographable throughout the ceremony.' },
       { q: 'How long before the Haldi should I arrive for makeup?', a: 'We recommend beginning makeup around 1.5 to 2 hours before the ceremony starts, allowing time for photography and final adjustments.' },
-      { q: 'Is the Haldi look very different from the Mehndi look?', a: 'Yes — the Haldi look is the most natural and minimal of all ceremony looks. The Mehndi look has a little more colour and definition. We design all looks as a cohesive sequence.' }
+      { q: 'Is the Haldi look very different from the Mehndi look?', a: 'Yes â€” the Haldi look is the most natural and minimal of all ceremony looks. The Mehndi look has a little more colour and definition. We design all looks as a cohesive sequence.' }
     ]
   }
 };
@@ -550,7 +550,7 @@ function openPkgDetail(key) {
   document.getElementById('pkgdGlance').innerHTML = glanceHtml;
 
   var faqHtml = d.faqs.map(function(f) {
-    return '<div class="pkgd-faq-item"><button class="pkgd-faq-q" onclick="window.togglePkgFaq(this)">' + f.q + '<span>⌄</span></button><div class="pkgd-faq-a">' + f.a + '</div></div>';
+    return '<div class="pkgd-faq-item"><button class="pkgd-faq-q" onclick="window.togglePkgFaq(this)">' + f.q + '<span>âŒ„</span></button><div class="pkgd-faq-a">' + f.a + '</div></div>';
   }).join('');
   document.getElementById('pkgdFaqList').innerHTML = faqHtml;
 
@@ -590,3 +590,40 @@ window.toggleBsExpand = function(id, btn) {
     btn.textContent = 'SHOW LESS ';
   }
 };
+
+/* 13. GOOGLE SHEETS FORM INTEGRATION */
+var SCRIPT_URL = ''; // Placeholder for Google Apps Script Web App URL
+function handleFormSubmit(e) {
+  e.preventDefault();
+  if (!SCRIPT_URL) {
+    alert('Submission failed: Google Sheet URL is not configured yet. Please wait for setup.');
+    return;
+  }
+  var form = e.target;
+  var btn = form.querySelector('button[type="submit"]');
+  var originalText = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  var data = new FormData(form);
+  fetch(SCRIPT_URL, { method: 'POST', body: data })
+    .then(response => response.json())
+    .then(response => {
+      if(response.result === 'success') {
+        alert('Thank you! Your details have been received successfully. Kajol will be in touch within 24 hours âœ¨');
+        form.reset();
+      } else {
+        alert('Something went wrong. Please try again or reach out on WhatsApp.');
+      }
+    })
+    .catch(error => {
+      alert('Error connecting to the server. Please check your internet or try WhatsApp.');
+    })
+    .finally(() => {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
+}
+var heroForm = document.getElementById('hero-form');
+if (heroForm) heroForm.addEventListener('submit', handleFormSubmit);
+var footerForm = document.getElementById('footer-contact-form');
+if (footerForm) footerForm.addEventListener('submit', handleFormSubmit);
