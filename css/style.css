@@ -1364,7 +1364,7 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
 .bs-learn.expanded { color: var(--text-dim); }
 
 /* ══════════════════════════════════════════
-   PORTFOLIO OVERLAY (no icon, no dark tint)
+   PORTFOLIO OVERLAY (removed)
 ══════════════════════════════════════════ */
 .port-overlay { display: none; }
 .port-overlay-icon { display: none; }
