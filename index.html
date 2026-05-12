@@ -1088,6 +1088,20 @@ window.openPkgDetail = function(key) {
   document.getElementById('pkgdFaqList').innerHTML = d.faqs.map(function(f){
     return '<div class="pkgd-faq-item"><button class="pkgd-faq-q" onclick="window.togglePkgFaq(this)">'+f[0]+'<span>⌄</span></button><div class="pkgd-faq-a">'+f[1]+'</div></div>';
   }).join('');
+
+  /* Background image per package */
+  var bgMap = {
+    bridal:     'assets/images/port1.jpg',
+    engagement: 'assets/images/port2.jpg',
+    reception:  'assets/images/port3.jpg',
+    sangeet:    'assets/images/port5.jpg',
+    haldi:      'assets/images/port6.jpg'
+  };
+  var hero = document.querySelector('.pkgd-hero');
+  if (hero && bgMap[key]) {
+    hero.style.backgroundImage = 'url(' + bgMap[key] + ')';
+  }
+
   var ov = document.getElementById('pkgdOverlay');
   ov.classList.add('open');
   ov.scrollTop = 0;
