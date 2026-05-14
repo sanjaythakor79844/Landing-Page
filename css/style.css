@@ -923,6 +923,15 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
 .bs-card:hover .bs-img-area img {
   transform: scale(1.04);
 }
+.bs-img-area--video {
+  background: #1a0a0a;
+}
+.bs-img-area--video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* SVG-style illustration using CSS */
 .bs-illustration {
