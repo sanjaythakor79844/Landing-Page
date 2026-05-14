@@ -876,6 +876,16 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
   gap: 16px;
   margin-top: 48px;
 }
+/* Last row — center the remaining 2 cards */
+.bs-grid .bs-card:nth-child(4),
+.bs-grid .bs-card:nth-child(5) {
+  grid-column: auto;
+}
+.bs-grid::after {
+  content: '';
+  flex: 1 1 calc(33.33% - 16px);
+  max-width: calc(33.33% - 16px);
+}
 
 .bs-card {
   background: #fff;
