@@ -895,15 +895,23 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
   border: 1.5px solid #e8b4bc;
 }
 
-/* Image area — top colored section */
+/* Image area — top section with actual image */
 .bs-img-area {
   width: 100%;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  height: 200px;
   overflow: hidden;
+  background: #f5ede0;
+}
+.bs-img-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.bs-card:hover .bs-img-area img {
+  transform: scale(1.04);
 }
 
 /* SVG-style illustration using CSS */
