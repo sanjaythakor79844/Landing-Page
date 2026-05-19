@@ -1067,9 +1067,10 @@ window.openPkgDetail = function(key) {
     haldi:      'assets/images/Haldi.jpg',
     mehendi:    'assets/images/Mahedi.jpg'
   };
-  var hero = document.querySelector('.pkgd-hero');
-  if (hero && bgMap[key]) {
-    hero.style.backgroundImage = 'url(' + bgMap[key] + ')';
+  var heroImg = document.getElementById('pkgdHeroImg');
+  if (heroImg && bgMap[key]) {
+    heroImg.src = bgMap[key];
+    heroImg.alt = key;
   }
 
   var ov = document.getElementById('pkgdOverlay');

@@ -1246,6 +1246,7 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
   height: auto;
   display: block;
   object-fit: contain;
+  object-position: center;
 }
 .pkgd-hero-content {
   position: absolute;
@@ -1255,7 +1256,7 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
   align-items: center;
   justify-content: flex-end;
   padding: 0 24px 40px;
-  background: linear-gradient(to bottom, transparent 40%, rgba(10,4,4,0.75) 100%);
+  background: linear-gradient(to bottom, rgba(10,4,4,0.2) 0%, rgba(10,4,4,0.75) 100%);
   text-align: center;
 }
 .pkgd-hero::before {
