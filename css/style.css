@@ -272,7 +272,7 @@ img    { display: block; max-width: 100%; }
 .port-middle-col .port-card-2,
 .port-middle-col .port-card-3 { flex: 1; min-height: 254px; }
 
-.port-card img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+.port-card img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; position: absolute; inset: 0; background: #f5ede0; }
 
 .port-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px; }
 .port-placeholder-icon { font-size: 2rem; opacity: 0.5; }
@@ -1230,20 +1230,27 @@ footer      { background: var(--bg3); border-top: 1px solid var(--border); }
 
 /* Hero */
 .pkgd-hero {
-  text-align: center;
-  padding: 80px 24px 60px;
-  background: #1a0a0a;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  border-bottom: 1px solid var(--border);
   position: relative;
+  border-bottom: 1px solid var(--border);
   overflow: hidden;
-  min-height: 420px;
+  background: #1a0a0a;
+}
+.pkgd-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+.pkgd-hero-content {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding: 0 24px 40px;
+  background: linear-gradient(to bottom, transparent 40%, rgba(10,4,4,0.75) 100%);
+  text-align: center;
 }
 .pkgd-hero::before {
   content: '';
