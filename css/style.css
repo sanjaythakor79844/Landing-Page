@@ -467,13 +467,18 @@ img    { display: block; max-width: 100%; }
 .pkg-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 52px; }
 
 .pkg-card         { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 22px; text-align: center; transition: all 0.35s; position: relative; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; }
-.pkg-card-overlay { position: absolute; inset: 0; background: rgba(247,242,234,0.82); backdrop-filter: blur(2px); z-index: 0; transition: background 0.35s; }
-.pkg-card:hover .pkg-card-overlay { background: rgba(247,242,234,0.72); }
+.pkg-card-overlay { position: absolute; inset: 0; background: rgba(10,4,4,0.45); z-index: 0; transition: background 0.35s; }
+.pkg-card:hover .pkg-card-overlay { background: rgba(10,4,4,0.35); }
 .pkg-card > *:not(.pkg-card-overlay) { position: relative; z-index: 1; }
-.pkg-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg,var(--accent-glow),transparent); opacity: 0; transition: opacity 0.4s; pointer-events: none; }
-.pkg-card:hover::before { opacity: 1; }
+.pkg-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(10,4,4,0.6) 100%); z-index: 0; pointer-events: none; }
 .pkg-card:hover   { border-color: var(--accent2); transform: translateY(-6px); box-shadow: 0 16px 44px var(--accent-glow); }
-.pkg-card.featured { background: linear-gradient(145deg,rgba(139,26,46,0.07),rgba(139,26,46,0.02)); border-color: var(--accent); }
+.pkg-card.featured { border-color: var(--accent); }
+/* Text colors on dark background */
+.pkg-card .pkg-name { color: #fff; }
+.pkg-card .pkg-tagline { color: rgba(255,255,255,0.82); }
+.pkg-card .pkg-desc { color: rgba(255,255,255,0.75); }
+.pkg-card .pkg-includes li { color: rgba(255,255,255,0.78); }
+.pkg-card .pkg-feat-badge { background: var(--accent); color: #fff; }
 
 .pkg-feat-badge { position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 16px; border-radius: 0 0 10px 10px; font-weight: 600; }
 .pkg-icon       { width: 56px; height: 56px; border-radius: 50%; background: var(--accent-light); border: 1px solid rgba(139,26,46,0.2); display: flex; align-items: center; justify-content: center; margin: 10px auto 14px; color: var(--accent); }
