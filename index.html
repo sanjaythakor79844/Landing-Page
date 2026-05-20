@@ -718,7 +718,6 @@
 
     <!-- Hero -->
     <div class="pkgd-hero">
-      <img class="pkgd-hero-img" id="pkgdHeroImg" src="" alt="">
       <div class="pkgd-hero-content">
         <div class="pkgd-emoji" id="pkgdEmoji"></div>
         <div class="pkgd-category" id="pkgdCategory"></div>
@@ -1064,13 +1063,12 @@ window.openPkgDetail = function(key) {
     engagement: 'assets/images/Engagement.PNG',
     reception:  'assets/images/Reception.PNG',
     sangeet:    'assets/images/Sangeet.PNG',
-    haldi:      'assets/images/Haldi.jpg',
+    haldi:      'assets/images/IMG_7649.PNG',
     mehendi:    'assets/images/Mahedi.jpg'
   };
-  var heroImg = document.getElementById('pkgdHeroImg');
-  if (heroImg && bgMap[key]) {
-    heroImg.src = bgMap[key];
-    heroImg.alt = key;
+  var hero = document.querySelector('.pkgd-hero');
+  if (hero && bgMap[key]) {
+    hero.style.backgroundImage = "url('" + bgMap[key] + "')";
   }
 
   var ov = document.getElementById('pkgdOverlay');

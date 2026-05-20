@@ -1,4 +1,4 @@
-﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    KAJOL R PASWAN â€” main.js
    Path: js/main.js
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
@@ -592,7 +592,7 @@ window.toggleBsExpand = function(id, btn) {
 };
 
 /* 13. GOOGLE SHEETS FORM INTEGRATION */
-var SCRIPT_URL = ''; // Placeholder for Google Apps Script Web App URL
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzdwYkWjgrTmYo7oAu65WKAvjTnBYDefZb2ldtK8zXDFIyQhL68OCuQEBBtqZiYdsDA/exec';
 function handleFormSubmit(e) {
   e.preventDefault();
   if (!SCRIPT_URL) {
